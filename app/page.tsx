@@ -67,7 +67,7 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">About us</p>
-            <span className={"primary-color " + styles.h2}>We’re your formidable guardian</span>
+            <span className={"primary-color " + styles.h2}>We're your formidable guardian</span>
             <span className={"gray-color " + styles.h2}> and reliable mentor</span>
           </div>
           <div className="col-span-1">
