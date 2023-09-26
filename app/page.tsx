@@ -1,113 +1,117 @@
 import Image from 'next/image'
-
+import TopNav from './_components/TopNav/TopNav'
+import styles from './page.module.css'
+import Link from 'next/link'
+const services = [
+  {number: '01',title: 'Corporate Law', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
+  {number: '02',title: 'Dispute Resolution', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
+  {number: '03',title: 'International Trade', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
+  {number: '04',title: 'Intellectual Property & Technology', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
+  {number: '05',title: 'Energy Projects & Infrastrastructure', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
+]
 export default function Home() {
+  
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <TopNav/>
+    <main>
+        <section className={styles.hero_section}>
+          <h1 className="primary-color">a world-class law firm.</h1>
+          <h1>fuelled by excellence, creativity and professionalism, we are built to provide best-in-class legal services to our clients.</h1>
+        </section>
+        <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
+          <div className="col-span-1 md:pe-[32px] mb-[40px]">
+            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">About us</p>
+            <h2 className={"primary-color " + styles.h2}>We’re your formidable guardian</h2>
+            <h2 className={"gray-color " + styles.h2}> and reliable mentor</h2>
+          </div>
+          <div className="col-span-1">
+            <p className="p mb-[16px] md:mb-[24px]">Danol Partner's legal team has consistently taken a leading role in significant cases throughout the years, demonstrating a deep understanding of the legal landscape. We acknowledge that no two cases are identical.</p>
+            <p className="p mb-[16px] md:mb-[24px]">Recognizing and honoring the distinctive intricacies, sensitivities, and difficulties inherent in each case, Danol Partner leverages its extensive experience and expertise to provide clients with expert legal counsel and representation in high-stakes commercial disputes and crisis scenarios. All the while, we remain committed to our fundamental values of excellence, innovation, and professionalism.</p>
+            <div>
+              <Link href="about"><button className="button button-primary mr-[20px] md:mr-[32px]">Find out more</button>
+               </Link>
+              <Link href="contact"><button className="button button-primary-outline">Contact us</button>
+           </Link>
+              </div>
+          </div>
+        </section>
+        <div style={{
+          backgroundImage: 'url(/images/happy-employees.png)'
+        }} className={styles.image_banner}></div>
+        <section className={styles.hero_section + ' ' + styles.section_sp}>
+          <div className='flex flex-col items-center text-center mb-[40px] mb:mb-[128px]'>
+          <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl font-semibold">Our Services</p>
+          <h2 className={"primary-color max-w-[880px] " + styles.h2}>Unwavering focus and expert experience in providing quality legal services.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px]">
+            {services.map((service, index) => {
+              return (
+                <div key={index} className={'col-span-1 ' + styles.service_block}>
+                  <p className={styles.number}>{service.number}</p>
+                  <h3 className={styles.title + ' primary-color'}>{service.title}</h3>
+                  <p className={styles.description}>{service.description}</p>
+              </div>)
+})}
+          </div>
+        </section>
+        <section className={styles.hero_section + ' relative ' + styles.section_tp}>
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            <div className="col-span-1">
+              <div className='mb-[40px] md:mb-[80px]'>
+                <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Values</p>
+            <h3 className={"primary-color " + styles.h3}>At Danol Partners we hold strong</h3>
+            <h3 className={"gray-color " + styles.h3}>values which helps us provide quality legal services to our client</h3>
+         </div>
+              <div>
+                <div className="pb-5 ps-5" style={{
+                  borderLeft: '4px solid #87265B'
+                }}>
+                  <p className="primary-color font-semibold">Culture of Excellence</p>
+                  <p className={styles.small_p}>Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.</p>
+                </div>
+                <div className="pb-5 ps-5" style={{
+                  borderLeft: '4px solid #E9E9E9'
+                }}>
+                  <p className="primary-color font-semibold">Creativity</p>
+                  <p className={styles.small_p}>We dedicate ourselves to creative problem-solving, addressing both familiar and unique legal matters with ingenuity and precision. This unwavering dedication to innovation fuels our ability to provide clients with effective and forward-thinking legal solutions.</p>
+                </div>
+                <div className="pb-5 ps-5" style={{
+                  borderLeft: '4px solid #E9E9E9'
+                }}>
+                  <p className="primary-color font-semibold">Professionalism</p>
+                  <p className={styles.small_p}>Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations. Client satisfaction is our paramount concern, and we go to great lengths to ensure that each client interaction is marked by responsiveness, transparency, and a deep commitment to their best interests.</p>
+                </div>
+              </div>
+           </div>
+            <div className={"col-span-1 hidden md:block " + styles.right_image}><Image src="/images/employees-in-office.png" alt="employees in the office" width={600} height={800} />
+          </div>
+</div>
+        
+        </section>
+        <div style={{
+          backgroundImage: 'url(/images/happy-employees-2.png)'
+        }} className={styles.image_banner + " flex flex-col justify-center text-white container-padding md:p-[216px]"}>
+
+                <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Team</p>
+            <h3 className={styles.h3 + ' max-w-[693px]'}>Unwavering focus and expert experience in providing quality legal services</h3>
+            <Link href="lawyers"><button className="button button-primary mt-[20px] md:mt-[30px]">Search for Lawyers</button>
+               </Link>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <section className='container-padding my-[80px] md:mt-[145px]'>
+        <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our blog</p>
+            <h2 className={"primary-color " + styles.h2}>Stay up to date with the latest news,</h2>
+            <h2 className={styles.h2}>announcements and events.</h2>
+        </section>
+        <div style={{
+          backgroundImage: 'url(/images/employees-in-office-2.png)'
+        }} className={styles.image_banner + ' container-padding flex flex-col justify-end'}>
+            <h4 className={styles.h2 + ' max-w-[693px] text-white md:text-[72px]'}>we are guided by </h4>
+            <h4 className={styles.h2 + ' max-w-[693px] md:text-[72px] pb-[80px] md:pb-[160px]'}>excellence, creativity & professionalism</h4>
+        </div>
+        
+      </main>
+    </>
+    
   )
 }

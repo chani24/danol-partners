@@ -1,0 +1,75 @@
+.button {
+    padding: 8px 24px;
+    border: 1px solid #87265B;
+    color: #87265B;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    min-width: 136px;
+}
+
+
+/* Light/White Button */
+.button-light {
+    background-color: #fff;
+    border: none;
+}
+
+
+/* Primary Button */
+.button-primary {
+    background-color: #87265B;
+    color: #fff;
+   
+}
+
+.button-primary:disabled{
+    background-color: #87265b8a;
+    border: none;
+}
+
+.button-small{
+padding: 6px 20px;
+font-weight: 500;
+ min-width: 50px;
+}
+
+.button-light-outline{
+border: 1px solid #fff;
+color: #fff;
+}
+
+
+/* Outline Button */
+.button-outline {
+    background-color: transparent;
+}
+
+
+.form{
+    margin: 24px 0;
+}
+.form input{
+    border-radius: 12px;
+    border: 0.5px solid #87265B;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    padding: 12px 10px;
+    height: 44px;
+    width: 100%;
+    background-color: transparent;
+    color: #001433;
+}
+@media (min-width: 768px) { 
+    .inverse-size-button{
+padding: 10px 20px; }
+
+.button-small{
+    padding: 8px 20px;
+}
+
+ }
