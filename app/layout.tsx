@@ -3,7 +3,7 @@ import './components.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Danol Partners - Home',
+  title: 'Danol Partners',
   description: 'Law Firm',
 }
 

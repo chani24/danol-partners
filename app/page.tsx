@@ -9,6 +9,51 @@ const services = [
   {number: '04',title: 'Intellectual Property & Technology', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
   {number: '05',title: 'Energy Projects & Infrastrastructure', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
 ]
+
+const articles = [
+  {
+    imageUrl: '1',
+    title: 'New Law Mandates Disclosure of Political Contributions by Corporations',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+  {
+    imageUrl: '2',
+    title: 'Supreme Court Decides Landmark Case in Favor of Free Speech',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+  {
+    imageUrl: '3',
+    title: 'Three recent legislative changes that affects you and your family.',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+  {
+    imageUrl: '4',
+    title: 'New Law Mandates Disclosure of Political Contributions by Corporations',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+  {
+    imageUrl: '5',
+    title: 'New Law Mandates Disclosure of Political Contributions by Corporations',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+  {
+    imageUrl: '6',
+    title: 'New Law Mandates Disclosure of Political Contributions by Corporations',
+    text: 'Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations.....',
+    name: 'Temitope Aiyegbusi',
+    time: '5'
+  },
+]
 export default function Home() {
   
   return (
@@ -22,14 +67,14 @@ export default function Home() {
         <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">About us</p>
-            <h2 className={"primary-color " + styles.h2}>We’re your formidable guardian</h2>
-            <h2 className={"gray-color " + styles.h2}> and reliable mentor</h2>
+            <span className={"primary-color " + styles.h2}>We’re your formidable guardian</span>
+            <span className={"gray-color " + styles.h2}> and reliable mentor</span>
           </div>
           <div className="col-span-1">
             <p className="p mb-[16px] md:mb-[24px]">Danol Partner's legal team has consistently taken a leading role in significant cases throughout the years, demonstrating a deep understanding of the legal landscape. We acknowledge that no two cases are identical.</p>
             <p className="p mb-[16px] md:mb-[24px]">Recognizing and honoring the distinctive intricacies, sensitivities, and difficulties inherent in each case, Danol Partner leverages its extensive experience and expertise to provide clients with expert legal counsel and representation in high-stakes commercial disputes and crisis scenarios. All the while, we remain committed to our fundamental values of excellence, innovation, and professionalism.</p>
             <div>
-              <Link href="about"><button className="button button-primary mr-[20px] md:mr-[32px]">Find out more</button>
+              <Link href="about-us"><button className="button button-primary mr-[20px] md:mr-[32px]">Find out more</button>
                </Link>
               <Link href="contact"><button className="button button-primary-outline">Contact us</button>
            </Link>
@@ -100,14 +145,29 @@ export default function Home() {
         </div>
         <section className='container-padding my-[80px] md:mt-[145px]'>
         <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our blog</p>
-            <h2 className={"primary-color " + styles.h2}>Stay up to date with the latest news,</h2>
-            <h2 className={styles.h2}>announcements and events.</h2>
+            <h4 className={ styles.h2 +" primary-color"}>Stay up to date with the latest news,</h4>
+          <h4 className={styles.h2}>announcements and events.</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px] mt-[40px] md:mt-[70px]">
+            {articles.map((article, index) => {
+              return (
+                <div key={index} className={"col-span-1 " + styles.blog_article}>
+                  <Image className="mb-5" src={`/images/blog/${article.imageUrl}.png`} alt={article.title} width={416} height={317} />
+                  <p className={styles.title}>{article.title}</p>
+                  <p className={styles.text}>{article.text}</p>
+                  <p className='flex items-end mt-4'><span className={styles.name}>{article.name}</span>  <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="2.5" cy="2.5" r="2.5" fill="#111111"/>
+</svg>
+                    <span className={styles.time}>{article.time} mins read</span></p>
+     </div>
+            )
+       })}
+          </div>
         </section>
         <div style={{
           backgroundImage: 'url(/images/employees-in-office-2.png)'
         }} className={styles.image_banner + ' container-padding flex flex-col justify-end'}>
-            <h4 className={styles.h2 + ' max-w-[693px] text-white md:text-[72px]'}>we are guided by </h4>
-            <h4 className={styles.h2 + ' max-w-[693px] md:text-[72px] pb-[80px] md:pb-[160px]'}>excellence, creativity & professionalism</h4>
+            <h4 className={styles.h2 + ' max-w-[693px] text-white '}>we are guided by </h4>
+            <h4 className={styles.h2 + ' max-w-[693px] pb-[80px] md:pb-[160px]'}>excellence, creativity & professionalism</h4>
         </div>
         
       </main>

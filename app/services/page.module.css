@@ -6,10 +6,6 @@
     padding: 117px 24px;
 }
 
-.hero_section.hero_section.section_tp{
-    padding-top: 0;
-}
-
 .hero_section h1{
     max-width: 850px;
     font-size: 32px;
@@ -61,66 +57,11 @@ line-height: 150%;
 letter-spacing: -0.32px;
 }
 
-.small_p{
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.32px;
-}
-
-.right_image{
-    height: 600px;
-}
-.right_image img{
-    position: absolute;
-    right: 0;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    min-height: 80%;
-}
-
-.blog_article img {
-    width: 100%;
-}
-
-.blog_article .text{
-font-size: 16px;
-line-height: 150%;
-letter-spacing: -0.32px;
-}
-
-.blog_article .title{
-    color: #32041D;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.blog_article .name{
-    color: #111;
-    font-size: 16px;
-    line-height: 120%;
-} 
-
-.blog_article svg{
-    margin: 0 12px 6px 12px;
-    
-}
-.blog_article .time{
-    color: rgba(17, 17, 17, 0.50);
-font-size: 16px;
-line-height: 120%;
-} 
-
 @media screen and (min-width: 767px){
     .hero_section{
         background-position: 50% 50%;
         padding: 117px 140px;
     }
-
-    .hero_section.section_sp{
-        padding: 117px;
-    }
-
     .hero_section h1{
         max-width: 850px;
         font-size: 64px;
@@ -139,7 +80,7 @@ h4.h2{
 letter-spacing: -1.44px;
 }
     .h2{
-font-size: 48px;
+font-size: 40px;
     }
 
     .h3{
@@ -155,7 +96,4 @@ font-size: 40px;
     font-size: 32px;
     }
 
-    .blog_article .title{
-        min-height: 80px;
-    }
 }
