@@ -1,0 +1,61 @@
+.hero_section {
+  min-height: calc(100vh - 200px);
+  background-image: url("/images/square-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 117px 24px;
+}
+
+.post_main {
+  padding: 80px 24px;
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.96px;
+}
+
+.hero_section h1 {
+  max-width: 850px;
+  font-size: 32px;
+  line-height: 100%; /* 64px */
+  letter-spacing: -1.28px;
+  margin-bottom: 8px;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.image_banner {
+  width: 100%;
+  height: 350px;
+  background-color: #c988a9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 767px) {
+  .hero_section {
+    background-position: 50% 50%;
+    padding: 117px 140px;
+  }
+
+  .h2 {
+    font-size: 48px;
+  }
+
+  .post_main {
+    padding: 80px 140px;
+  }
+
+  .hero_section h1 {
+    max-width: 850px;
+    font-size: 64px;
+    margin-bottom: 8px;
+  }
+
+  .image_banner {
+    width: 100%;
+    height: 700px;
+  }
+}

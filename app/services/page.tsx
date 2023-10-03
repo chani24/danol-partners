@@ -7,7 +7,7 @@ const services = [
   {number: '04',title: 'Intellectual Property & Technology', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
   {number: '05',title: 'Energy Projects & Infrastrastructure', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
 ]
-export default function Home() {
+export default function Services() {
   
   return (
     <>
@@ -22,8 +22,8 @@ export default function Home() {
         <section className="grid grid-cols-1 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our mantra</p>
-            <span className={"primary-color " + styles.h2}>At Danol Partners, our commitment is to deliver exceptional legal services, tailored to our clients' unique needs, across these diverse practice areas. We </span>
-            <span className={"gray-color " + styles.h2}>bring together the expertise of our seasoned lawyers to provide innovative and effective solutions for today's complex business and legal challenges.</span>
+            <span className={"primary-color " + styles.h2 + " " + styles.h2_large}>At Danol Partners, our commitment is to deliver exceptional legal services, tailored to our clients' unique needs, across these diverse practice areas. We </span>
+            <span className={"gray-color " + styles.h2 + " " + styles.h2_large}>bring together the expertise of our seasoned lawyers to provide innovative and effective solutions for today's complex business and legal challenges.</span>
           </div>
         </section>
         <div style={{

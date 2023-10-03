@@ -3,6 +3,7 @@
     background-image: url('/images/square-background.svg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 50% 200%;
     padding: 117px 24px;
 }
 
@@ -15,6 +16,34 @@ margin-bottom: 8px;
 color: rgba(17, 17, 17, 0.50);
 }
 
+.hero_section label{
+    color: #87265B;
+font-size: 20px;
+line-height: 120%; /* 28.8px */
+letter-spacing: -0.48px;
+}
+
+.hero_section input, .hero_section textarea{
+    width: 100%;
+    display: block;
+    border: 1px solid #FFF8FC;
+    background: #FFF8FC;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.hero_section textarea{
+    height: 200px;
+}
+
+.hero_section input{
+    height: 40px;
+    padding: 4px;
+}
+.hero_section svg{
+    height: 40px;
+    width: 40px;
+}
 .image_banner{
     width: 100%;
     height: 350px;
@@ -36,31 +65,12 @@ letter-spacing: -0.96px;
 letter-spacing: -0.96px;
 }
 
-.service_block .number{
-    color: rgba(135, 38, 91, 0.40);
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 120%;
-}
-.service_block .title{
-    margin: 10px 0;
-font-size: 24px;
-font-weight: 600;
-line-height: 120%;
-letter-spacing: -1.28px;
-}
-
-.service_block .description{
-    font-size: 16px;
-    font-weight: 400;
-line-height: 150%;
-letter-spacing: -0.32px;
-}
 
 @media screen and (min-width: 767px){
     .hero_section{
-        background-position: 50% 50%;
         padding: 117px 140px;
+        background-size: auto;
+        background-repeat: repeat-x;
     }
     .hero_section h1{
         max-width: 850px;
@@ -71,6 +81,10 @@ letter-spacing: -0.32px;
     .image_banner{
         width: 100%;
         height: 700px;
+    }
+
+    .hero_section label{
+    font-size: 24px;
     }
 
     
@@ -88,16 +102,17 @@ font-size: 40px;
     }
 
     .h3{
-        font-size: 40px;
+        font-size: 36px;
     }
 
-    .service_block .number{
-font-size: 40px;
+    .hero_section input{
+        height: 60px;
+        padding: 4px;
     }
 
-    .service_block .title{
-        margin: 20px 0;
-    font-size: 32px;
+    .hero_section svg{
+        height: 64px;
+        width: 64px;
     }
 
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import TopNav from './_components/TopNav/TopNav'
 import styles from './page.module.css'
 import Link from 'next/link'
+import Blog from './_components/Blog/Blog'
 const services = [
   {number: '01',title: 'Corporate Law', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
   {number: '02',title: 'Dispute Resolution', description: 'Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.'},
@@ -62,13 +63,13 @@ export default function Home() {
     <main>
         <section className={styles.hero_section}>
           <h1 className="primary-color">a world-class law firm.</h1>
-          <h1>fuelled by excellence, creativity and professionalism, we are built to provide best-in-class legal services to our clients.</h1>
+          <h1>with African roots. We are driven by excellence, professionalism and creativity.</h1>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">About us</p>
-            <span className={"primary-color " + styles.h2}>We're your formidable guardian</span>
-            <span className={"gray-color " + styles.h2}> and reliable mentor</span>
+            <span className={"primary-color " + styles.h2}>We partner with our clients to solve the </span>
+            <span className={"gray-color " + styles.h2}>knottiest legal problems and provide creative legal solutions.</span>
           </div>
           <div className="col-span-1">
             <p className="p mb-[16px] md:mb-[24px]">Danol Partner's legal team has consistently taken a leading role in significant cases throughout the years, demonstrating a deep understanding of the legal landscape. We acknowledge that no two cases are identical.</p>
@@ -87,7 +88,7 @@ export default function Home() {
         <section className={styles.hero_section + ' ' + styles.section_sp}>
           <div className='flex flex-col items-center text-center mb-[40px] mb:mb-[128px]'>
           <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl font-semibold">Our Services</p>
-          <h2 className={"primary-color max-w-[880px] " + styles.h2}>Unwavering focus and expert experience in providing quality legal services.</h2>
+          <h2 className={"primary-color max-w-[880px] " + styles.h2}>We provide expert legal advice in a wide range of practice areas.</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px]">
             {services.map((service, index) => {
@@ -105,8 +106,8 @@ export default function Home() {
             <div className="col-span-1">
               <div className='mb-[40px] md:mb-[80px]'>
                 <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Values</p>
-            <h3 className={"primary-color " + styles.h3}>At Danol Partners we hold strong</h3>
-            <h3 className={"gray-color " + styles.h3}>values which helps us provide quality legal services to our client</h3>
+            <h3 className={"primary-color " + styles.h3}>At Danol Partners,</h3>
+            <h3 className={"gray-color " + styles.h3}> our values are at the core of our culture.</h3>
          </div>
               <div>
                 <div className="pb-5 ps-5" style={{
@@ -145,23 +146,9 @@ export default function Home() {
         </div>
         <section className='container-padding my-[80px] md:mt-[145px]'>
         <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our blog</p>
-            <h4 className={ styles.h2 +" primary-color"}>Stay up to date with the latest news,</h4>
-          <h4 className={styles.h2}>announcements and events.</h4>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px] mt-[40px] md:mt-[70px]">
-            {articles.map((article, index) => {
-              return (
-                <div key={index} className={"col-span-1 " + styles.blog_article}>
-                  <Image className="mb-5" src={`/images/blog/${article.imageUrl}.png`} alt={article.title} width={416} height={317} />
-                  <p className={styles.title}>{article.title}</p>
-                  <p className={styles.text}>{article.text}</p>
-                  <p className='flex items-end mt-4'><span className={styles.name}>{article.name}</span>  <svg width="5" height="5" viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="2.5" cy="2.5" r="2.5" fill="#111111"/>
-</svg>
-                    <span className={styles.time}>{article.time} mins read</span></p>
-     </div>
-            )
-       })}
-          </div>
+            <h4 className={ styles.h2 +" primary-color"}>Read our insights</h4>
+          <h4 className={styles.h2}> and stay up to date with our publications</h4>
+          <Blog articleNumber={6} />
         </section>
         <div style={{
           backgroundImage: 'url(/images/employees-in-office-2.png)'
