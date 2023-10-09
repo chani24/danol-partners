@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/aos": "^3.0.5",
+    "aos": "^2.3.4",
     "gsap": "^3.12.2",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/node": "latest",

@@ -89,6 +89,10 @@ body {
 .bg-light {
   background-color: #f8f8f8;
 }
+
+.Typewriter {
+  display: inline;
+}
 @media screen and (min-width: 767px) {
   .container-padding {
     padding: 0px 64px;

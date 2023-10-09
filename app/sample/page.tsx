@@ -1,10 +1,10 @@
 "use client";
 import Typewriter from "typewriter-effect";
 import Image from "next/image";
-import TopNav from "./_components/TopNav/TopNav";
+import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 import Link from "next/link";
-import Blog from "./_components/Blog/Blog";
+import Blog from "../_components/Blog/Blog";
 
 import React, { useEffect, useRef, useState } from "react";
 const services = [
@@ -104,6 +104,9 @@ export default function Home() {
             with African roots. We are driven by excellence, professionalism and
             creativity.
           </h1>
+          <div className={styles.map_container}>
+            <Image alt="world map" src="/images/world-map.svg" fill />
+          </div>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
@@ -286,20 +289,13 @@ export default function Home() {
             backgroundImage: "url(/images/employees-in-office-2.png)",
           }}
           className={
-            styles.image_banner +
-            " container-padding flex flex-col justify-end overflow-hidden"
+            styles.image_banner + " container-padding flex flex-col justify-end"
           }
         >
-          <h4
-            data-aos="slide-up"
-            className={styles.h2 + " max-w-[693px] text-white "}
-          >
+          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
             we are driven by{" "}
           </h4>
-          <h4
-            data-aos="slide-up"
-            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
-          >
+          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism
           </h4>
         </div>
