@@ -1,126 +1,157 @@
-.hero_section{
-    min-height: calc(100vh - 100px);
-    background-image: url('/images/square-background.svg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 117px 24px;
+.hero_section {
+  min-height: calc(100vh - 100px);
+  background-image: url("/images/square-background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 117px 24px;
 }
 
-.hero_section.hero_section.section_tp{
-    padding-top: 0;
+.hero_section.hero_section.section_tp {
+  background-color: white;
 }
 
-.hero_section h1{
+.hero_section h1 {
+  max-width: 850px;
+  font-size: 32px;
+  line-height: 100%; /* 64px */
+  letter-spacing: -1.28px;
+  margin-bottom: 8px;
+  color: rgba(17, 17, 17, 0.5);
+}
+
+.image_banner {
+  width: 100%;
+  height: 350px;
+  background-color: #c988a9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.h2 {
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.96px;
+}
+
+.h3 {
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -0.96px;
+}
+
+.service_block .number {
+  color: rgba(135, 38, 91, 0.4);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+}
+.service_block .title {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -1.28px;
+}
+
+.service_block .description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+}
+
+.small_p {
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 300;
+  letter-spacing: -0.32px;
+}
+
+.right_image {
+  height: 600px;
+}
+.right_image img {
+  position: absolute;
+  right: 0;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  min-height: 80%;
+}
+
+@keyframes moveVerticalLine {
+  0%,
+  100% {
+    top: 0;
+  }
+  16.66% {
+    top: 0;
+  }
+
+  33.3% {
+    top: 33.3%;
+  }
+  50% {
+    top: 33.3%;
+  }
+
+  66.6% {
+    top: 66%;
+  }
+  83% {
+    top: 66%;
+  }
+}
+.animated_border {
+  width: 1px;
+  height: 33.3%;
+  position: absolute;
+  top: 0;
+  left: -4px;
+  border-left: 4px solid #87265b;
+  animation: moveVerticalLine 6s linear infinite;
+}
+
+@media screen and (min-width: 767px) {
+  .hero_section {
+    background-position: 50% 50%;
+    padding: 117px 140px;
+  }
+
+  .hero_section.section_tp {
+    padding-left: 176px;
+  }
+
+  .hero_section h1 {
     max-width: 850px;
-    font-size: 32px;
-line-height: 100%; /* 64px */
-letter-spacing: -1.28px;
-margin-bottom: 8px;
-color: rgba(17, 17, 17, 0.50);
-}
+    font-size: 64px;
+    margin-bottom: 8px;
+  }
 
-.image_banner{
+  .image_banner {
     width: 100%;
-    height: 350px;
-    background-color: #c988a9;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.h2{
-    font-size: 32px;
-line-height: 120%;
-letter-spacing: -0.96px;
-}
-
-.h3{
-    font-size: 28px;
-    line-height: 120%;
-letter-spacing: -0.96px;
-}
-
-.service_block .number{
-    color: rgba(135, 38, 91, 0.40);
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 120%;
-}
-.service_block .title{
-    margin: 10px 0;
-font-size: 24px;
-font-weight: 600;
-line-height: 120%;
-letter-spacing: -1.28px;
-}
-
-.service_block .description{
-    font-size: 16px;
-    font-weight: 400;
-line-height: 150%;
-letter-spacing: -0.32px;
-}
-
-.small_p{
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: -0.32px;
-}
-
-.right_image{
     height: 600px;
-}
-.right_image img{
-    position: absolute;
-    right: 0;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    min-height: 80%;
-}
+  }
 
-
-@media screen and (min-width: 767px){
-    .hero_section{
-        background-position: 50% 50%;
-        padding: 117px 140px;
-    }
-
-    .hero_section.section_sp{
-        padding: 117px;
-    }
-
-    .hero_section h1{
-        max-width: 850px;
-        font-size: 64px;
-        margin-bottom: 8px;
-    }
-
-    .image_banner{
-        width: 100%;
-        height: 700px;
-    }
-
-    
-h4.h2{
+  h4.h2 {
     font-size: 72px;
     line-height: 100%; /* 72px */
-letter-spacing: -1.44px;
-}
-    .h2{
-font-size: 48px;
-    }
+    letter-spacing: -1.44px;
+  }
+  .h2 {
+    font-size: 48px;
+  }
 
-    .h3{
-        font-size: 40px;
-    }
+  .h3 {
+    font-size: 40px;
+  }
 
-    .service_block .number{
-font-size: 40px;
-    }
+  .service_block .number {
+    font-size: 40px;
+  }
 
-    .service_block .title{
-        margin: 20px 0;
+  .service_block .title {
+    margin: 20px 0;
     font-size: 32px;
-    }
-
+  }
 }

@@ -13,6 +13,12 @@
   letter-spacing: -0.96px;
 }
 
+.h3 {
+  font-size: 28px;
+  line-height: 120%;
+  letter-spacing: -0.96px;
+}
+
 @media screen and (min-width: 767px) {
   .image_banner {
     width: 100%;
@@ -29,5 +35,9 @@
   }
   .h2_large {
     font-size: 48px;
+  }
+
+  .h3 {
+    font-size: 40px;
   }
 }

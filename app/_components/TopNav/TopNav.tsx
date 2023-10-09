@@ -12,12 +12,10 @@ export default function TopNav(props: {
 }) {
   const [dropdown, setDropdown] = useState(false);
 
-
-
   const [nav, setNav] = useState(false);
   const openNav = () => {
     setNav(true);
-   /* gsap.to("." + styles.dropdown_wrapper, {
+    /* gsap.to("." + styles.dropdown_wrapper, {
       height: "100vh",
       duration: 0.5,
       ease: "power2.inOut",
@@ -26,7 +24,7 @@ export default function TopNav(props: {
 
   const closeNav = (delay: number = 0) => {
     setNav(false);
-   /* gsap.to("." + styles.dropdown_wrapper, {
+    /* gsap.to("." + styles.dropdown_wrapper, {
       height: 0,
       duration: 0.5,
       delay,
@@ -37,16 +35,17 @@ export default function TopNav(props: {
   return (
     <div className="relative bg-#32041D">
       <div className={"container-padding " + styles.top_nav}>
-         <Link href="/" className="text-#32041D md:text-2xl font-medium">
-            <Image
-              className={styles.logo}
-              alt="danol logo"
-              src="/images/logo.png"
-              width={64.5}
-              height={22.3}
-            />
+        <Link href="/" className="text-#32041D md:text-2xl font-medium">
+          <Image
+            className={styles.logo}
+            alt="danol logo"
+            src="/images/logo.png"
+            width={64.5}
+            height={22.3}
+          />
         </Link>
-        <div className=" md:hidden">{nav ? (
+        <div className=" md:hidden">
+          {nav ? (
             <svg
               onClick={() => closeNav()}
               width="24"
@@ -96,18 +95,30 @@ export default function TopNav(props: {
                 fill="#32041D"
               />
             </svg>
-        )}</div>
-        <div className="hidden md:flex gap-[36px]">
-          <Link className={styles.nav_link} href="about-us">About</Link>
-          <Link className={styles.nav_link} href="services">Services</Link>
-          <Link className={styles.nav_link} href="team">Team</Link>
-          <Link className={styles.nav_link} href="blog">Blog</Link>
-          <Link className={styles.nav_link} href="contact">Contact</Link>
+          )}
         </div>
-          
+        <div className="hidden md:flex gap-[36px]">
+          <Link className={styles.nav_link} href="about-us">
+            About
+          </Link>
+          <Link className={styles.nav_link} href="services">
+            Services
+          </Link>
+          <Link className={styles.nav_link} href="team">
+            Team
+          </Link>
+          <Link className={styles.nav_link} href="join">
+            Join Us
+          </Link>
+          <Link className={styles.nav_link} href="blog">
+            Blog
+          </Link>
+          <Link className={styles.nav_link} href="contact">
+            Contact
+          </Link>
+        </div>
       </div>
 
-      
       <div className={styles.dropdown_wrapper}>
         <div className={"container-padding " + styles.top_nav__dropdown}>
           <div className="md:hidden">

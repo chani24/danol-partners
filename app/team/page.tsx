@@ -9,6 +9,7 @@ export default function Team() {
         <div
           style={{
             backgroundImage: "url(/images/happy-employees-3.png)",
+            maxHeight: "600px",
           }}
           className={
             styles.image_banner +
@@ -51,7 +52,7 @@ export default function Team() {
             </p>
           </div>
         </div>
-        <section className="grid grid-cols-1 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]"></section>
+        {/*<section className="grid grid-cols-1 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]"></section>*/}
 
         <div
           style={{
