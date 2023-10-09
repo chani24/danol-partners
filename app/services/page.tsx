@@ -2,7 +2,6 @@ import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 const services = [
   {
-    number: "01",
     title: "Corporate Law",
     details: [
       {
@@ -108,7 +107,6 @@ const services = [
     ],
   },
   {
-    number: "02",
     title: "Dispute Resolution",
     details: [
       {
@@ -157,8 +155,7 @@ const services = [
     ],
   },
   {
-    number: "03",
-    title: "Energy Projects & Infrastructure",
+    title: "Energy, Projects & Infrastructure",
     details: [
       {
         title: "",
@@ -181,7 +178,6 @@ const services = [
     ],
   },
   {
-    number: "04",
     title: "Intellectual Property & Technology",
     details: [
       {
@@ -244,7 +240,6 @@ const services = [
     ],
   },
   {
-    number: "05",
     title: "International Trade",
     details: [
       {
@@ -303,7 +298,7 @@ export default function Services() {
             " text-white container-padding flex flex-col justify-center items-center text-center"
           }
         >
-          <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl font-semibold">
+          <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">
             Our Services
           </p>
           <h1 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
@@ -338,7 +333,7 @@ export default function Services() {
         ></div>
         <section className={styles.hero_section}>
           <div className="flex flex-col items-center text-center mb-[40px] mb:mb-[128px]">
-            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl font-semibold">
+            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               Our Services
             </p>
             <h2 className={"primary-color max-w-[880px] " + styles.h2}>
@@ -356,9 +351,10 @@ export default function Services() {
                     styles.service_block
                   }
                 >
-                  <div className="col-span-1 md:col-span-2 md:pr-[80px]">
-                    <p className={styles.number}>{service.number}</p>
-                    <h3 className={styles.title + " primary-color"}>
+                  <div className="col-span-1 md:col-span-2 md:pr-[80px] relative">
+                    <h3
+                      className={styles.title + " primary-color sticky top-0"}
+                    >
                       {service.title}
                     </h3>
                   </div>
@@ -388,7 +384,7 @@ export default function Services() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism

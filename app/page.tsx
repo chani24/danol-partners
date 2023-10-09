@@ -1,47 +1,96 @@
+"use client";
 import Image from "next/image";
 import TopNav from "./_components/TopNav/TopNav";
 import styles from "./page.module.css";
 import Link from "next/link";
 import Blog from "./_components/Blog/Blog";
+
+import React, { useEffect, useRef, useState } from "react";
 const services = [
   {
-    number: "01",
     title: "Corporate Law",
     description:
       "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
   {
-    number: "02",
     title: "Dispute Resolution",
     description:
       "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
   {
-    number: "03",
     title: "International Trade",
     description:
       "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
   {
-    number: "04",
     title: "Intellectual Property & Technology",
     description:
       "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
   {
-    number: "05",
-    title: "Energy Projects & Infrastrastructure",
+    title: "Energy, Projects & Infrastrastructure",
     description:
       "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
 ];
 export default function Home() {
+  const elementRef = useRef<HTMLInputElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [top, setTop] = useState(0);
+
+  // Function to check if the element is in the viewport
+  const manipulateElement = () => {
+    const element = elementRef.current;
+    if (!element) return false;
+
+    const rect = element?.getBoundingClientRect();
+    if (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    ) {
+      const scrollY = rect.top;
+      const maxScroll = 66; // * (window.innerHeight / 100); // 66% of viewport height
+
+      // Calculate the new top position within the range of 0 to maxScroll
+      const newTop = Math.min(Math.max(scrollY, 0), maxScroll);
+
+      //setTop(newTop);
+      //console.log(rect.top);
+    }
+  };
+
+  // Function to handle visibility changes
+  const handleVisibility = () => {
+    manipulateElement();
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleVisibility);
+    window.addEventListener("resize", handleVisibility);
+
+    // Initial check when the component mounts
+    handleVisibility();
+
+    // Clean up event listeners when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleVisibility);
+      window.removeEventListener("resize", handleVisibility);
+    };
+  }, []);
+
   return (
     <>
       <TopNav />
       <main>
         <section className={styles.hero_section}>
-          <h1 className="primary-color">a world-class law firm.</h1>
+          <h1>
+            <span>a </span>
+            <span className="primary-color">world-class</span>
+            <span> law firm.</span>
+          </h1>
           <h1>
             with African roots. We are driven by excellence, professionalism and
             creativity.
@@ -96,8 +145,8 @@ export default function Home() {
           className={styles.image_banner}
         ></div>
         <section className="bg-light px-[24px] py-[80px] md:px-[112px] md:py-[160px]">
-          <div className="flex flex-col items-center text-center mb-[40px] mb:mb-[128px]">
-            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl font-semibold">
+          <div className="flex flex-col items-center text-center mb-[40px] md:mb-[128px]">
+            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               Our Services
             </p>
             <h2 className={"primary-color max-w-[880px] " + styles.h2}>
@@ -147,6 +196,7 @@ export default function Home() {
                 style={{
                   borderLeft: "4px solid #E9E9E9",
                 }}
+                ref={elementRef}
               >
                 <div className="pb-5 ps-5">
                   <p className="primary-color font-semibold">
@@ -174,7 +224,12 @@ export default function Home() {
                     of professionalism.
                   </p>
                 </div>
-                <div className={styles.animated_border} />
+                <div
+                  className={styles.animated_border}
+                  style={{
+                    top: top + "%", // Add margin to create scrolling space
+                  }}
+                />
               </div>
             </div>
             <div className={"col-span-1 hidden md:block " + styles.right_image}>
@@ -198,8 +253,7 @@ export default function Home() {
         >
           <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Team</p>
           <h3 className={styles.h3 + " max-w-[693px]"}>
-            Unwavering focus and expert experience in providing quality legal
-            services
+            Best in class lawyers providing quality legal services.
           </h3>
           <Link href="lawyers">
             <button className="button button-primary mt-[20px] md:mt-[30px]">
@@ -227,7 +281,7 @@ export default function Home() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism

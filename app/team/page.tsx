@@ -8,7 +8,7 @@ export default function Team() {
       <main>
         <div
           style={{
-            backgroundImage: "url(/images/happy-employees-3.png)",
+            backgroundImage: "url(/images/employees.png)",
             maxHeight: "600px",
           }}
           className={
@@ -16,12 +16,16 @@ export default function Team() {
             " text-white container-padding flex flex-col justify-center items-center text-left"
           }
         >
-          <div className=" max-w-[693px] pb-[80px] md:pb-[160px]">
+          <div className=" max-w-[693px] pb-[80px] md:pb-[160px] text-center">
             <h1 className={styles.h2}>
-              We have a team of world class lawyers that you can count on.
+              Our Lawyers are leaders in their fields.
             </h1>
             <div className="relative my-4">
-              <input className={styles.input} type="text" />
+              <input
+                className={styles.input}
+                type="text"
+                placeholder="Search for Lawyers"
+              />
               <svg
                 className={styles.search_icon}
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +67,7 @@ export default function Team() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism

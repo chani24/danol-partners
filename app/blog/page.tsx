@@ -31,7 +31,7 @@ export default function Blog() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism

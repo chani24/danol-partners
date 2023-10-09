@@ -79,29 +79,6 @@
   min-height: 80%;
 }
 
-@keyframes moveVerticalLine {
-  0%,
-  100% {
-    top: 0;
-  }
-  16.66% {
-    top: 0;
-  }
-
-  33.3% {
-    top: 33.3%;
-  }
-  50% {
-    top: 33.3%;
-  }
-
-  66.6% {
-    top: 66%;
-  }
-  83% {
-    top: 66%;
-  }
-}
 .animated_border {
   width: 1px;
   height: 33.3%;
@@ -109,7 +86,6 @@
   top: 0;
   left: -4px;
   border-left: 4px solid #87265b;
-  animation: moveVerticalLine 6s linear infinite;
 }
 
 @media screen and (min-width: 767px) {

@@ -3,33 +3,31 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./topnav.module.css";
-import { useContext, useEffect, useState } from "react";
-//import gsap from "gsap";
+import { useState } from "react";
+import gsap from "gsap";
 
 export default function TopNav(props: {
   searchDropdown?: boolean;
   setSearchDropdown?: any;
 }) {
-  const [dropdown, setDropdown] = useState(false);
-
   const [nav, setNav] = useState(false);
   const openNav = () => {
     setNav(true);
-    /* gsap.to("." + styles.dropdown_wrapper, {
+    gsap.to("." + styles.dropdown_wrapper, {
       height: "100vh",
       duration: 0.5,
       ease: "power2.inOut",
-    });*/
+    });
   };
 
   const closeNav = (delay: number = 0) => {
     setNav(false);
-    /* gsap.to("." + styles.dropdown_wrapper, {
+    gsap.to("." + styles.dropdown_wrapper, {
       height: 0,
       duration: 0.5,
       delay,
       ease: "power2.inOut",
-    });*/
+    });
   };
 
   return (
@@ -122,25 +120,22 @@ export default function TopNav(props: {
       <div className={styles.dropdown_wrapper}>
         <div className={"container-padding " + styles.top_nav__dropdown}>
           <div className="md:hidden">
-            <Link href="/login">Login</Link>
+            <Link href="about-us">About</Link>
           </div>
           <div>
-            <Link href="/about-us">About Us</Link>
+            <Link href="services">Services</Link>
           </div>
           <div>
-            <Link href="/services">Our Services</Link>
+            <Link href="team">Team</Link>
           </div>
           <div>
-            <Link href="/doctors">Doctors</Link>
+            <Link href="join">Join Us</Link>
           </div>
           <div>
-            <Link href="/gallery">Gallery</Link>
+            <Link href="blog">Blog</Link>
           </div>
           <div>
-            <Link href="/resource-center">Resources</Link>
-          </div>
-          <div>
-            <Link href="/support">Support</Link>
+            <Link href="contact">Contact</Link>
           </div>
         </div>
       </div>

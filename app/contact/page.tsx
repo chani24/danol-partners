@@ -12,7 +12,7 @@ export default function Contact() {
               <p className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
                 Contact Us
               </p>
-              <h1>Reach out to us today, let's help you solve that case.</h1>
+              <h1>We would love to hear from you!</h1>
             </div>
             <div className="col-span-1 hidden md:block"></div>
             <div className="col-span-1">
@@ -187,7 +187,7 @@ export default function Contact() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism

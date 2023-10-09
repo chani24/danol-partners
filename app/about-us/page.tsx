@@ -2,19 +2,16 @@ import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 const services = [
   {
-    number: "01",
     title: "Culture of Excellence",
     description:
       "At Danol Partners, we uphold a culture of unwavering excellence that defines our commitment to the legal profession. Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
   },
   {
-    number: "02",
     title: "Creativity",
     description:
       "Our commitment revolves around consistently delivering innovative resolutions to well-established and emerging legal challenges. We dedicate ourselves to creative problem-solving, addressing both familiar and unique legal matters with ingenuity and precision. This unwavering dedication to innovation fuels our ability to provide clients with effective and forward-thinking legal solutions.",
   },
   {
-    number: "03",
     title: "Professionalism",
     description:
       "Our core value lies in guaranteeing exceptional client experiences, coupled with unwavering professionalism in every facet of our business operations. Client satisfaction is our paramount concern, and we go to great lengths to ensure that each client interaction is marked by responsiveness, transparency, and a deep commitment to their best interests.",
@@ -89,7 +86,6 @@ export default function About() {
                   key={index}
                   className={"col-span-1 " + styles.service_block}
                 >
-                  <p className={styles.number}>{service.number}</p>
                   <h3 className={styles.title + " primary-color"}>
                     {service.title}
                   </h3>
@@ -108,7 +104,7 @@ export default function About() {
           }
         >
           <h4 className={styles.h2 + " max-w-[693px] text-white "}>
-            we are guided by{" "}
+            we are driven by{" "}
           </h4>
           <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
             excellence, creativity & professionalism
