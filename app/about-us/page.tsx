@@ -1,3 +1,5 @@
+"use client";
+import ShadowDiv from "../_components/ShadowDiv";
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 const services = [
@@ -23,10 +25,13 @@ export default function About() {
       <TopNav />
       <main>
         <section className={styles.hero_section}>
-          <p className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+          <p
+            data-aos="fade"
+            className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl"
+          >
             About us
           </p>
-          <h1>
+          <h1 data-aos="fade">
             A world-class law firm. <br />
             Fuelled by excellence, creativity and professionalism, we are built
             to provide best-in-class legal services to our clients.
@@ -34,26 +39,45 @@ export default function About() {
         </section>
         <section className="grid grid-cols-1 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
           <div className="col-span-1 md:pe-[32px] mb-[40px]">
-            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+            <p
+              data-aos="fade-down"
+              className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl"
+            >
               Our philosophy
             </p>
-            <p className={"primary-color pb-[16px] md:pb-[32px] " + styles.h2}>
+            <p
+              data-aos="fade"
+              data-aos-delay="200"
+              className={"primary-color pb-[16px] md:pb-[32px] " + styles.h2}
+            >
               Danol Partners is a full-service law firm established with a
               resolve to provide creative, practical, and cutting-edge legal
               solutions to its clients.
             </p>
-            <p className={"text-[#878787] pb-[16px] md:pb-[32px] " + styles.h2}>
+            <p
+              data-aos="fade"
+              data-aos-delay="400"
+              className={"text-[#878787] pb-[16px] md:pb-[32px] " + styles.h2}
+            >
               {" "}
               Our goal is to leave our clients satisfied with our best-in-class,
               commercially-minded legal advisory/ representation.
             </p>
-            <p className={"primary-color pb-[16px] md:pb-[32px] " + styles.h2}>
+            <p
+              data-aos="fade"
+              data-aos-delay="600"
+              className={"primary-color pb-[16px] md:pb-[32px] " + styles.h2}
+            >
               We are equipped to provide services in different areas of the law
               which include, but are not limited to; corporate commercial law,
               mergers and acquisitions, taxation advisory, dispute resolution,
               aviation law, intellectual property, etc.
             </p>
-            <p className={"text-[#878787] " + styles.h2}>
+            <p
+              data-aos="fade"
+              data-aos-delay="800"
+              className={"text-[#878787] " + styles.h2}
+            >
               Our Lawyers are the crème de la crème of the legal services
               industry. They are highly skilled, vastly knowledgeable, and
               extremely experienced on the issues they advise clients on.
@@ -64,17 +88,28 @@ export default function About() {
           style={{
             backgroundImage: "url(/images/happy-employees.png)",
           }}
-          className={styles.image_banner}
-        ></div>
+          className={styles.image_banner + " relative"}
+        >
+          <ShadowDiv />
+        </div>
         <section className={styles.hero_section + " " + styles.section_sp}>
           <div className="flex flex-col items-center text-center mb-[40px] mb:mb-[128px]">
-            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+            <p
+              data-aos="fade-down"
+              className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl"
+            >
               Our Values
             </p>
-            <h2 className={"primary-color max-w-[880px] " + styles.h2}>
+            <h2
+              data-aos="fade-down"
+              className={"primary-color max-w-[880px] " + styles.h2}
+            >
               At Danol Partners,
             </h2>
-            <h2 className={"text-[#939393] max-w-[880px] " + styles.h2}>
+            <h2
+              data-aos="fade-down"
+              className={"text-[#939393] max-w-[880px] " + styles.h2}
+            >
               {" "}
               our values are at the core of our culture.
             </h2>
@@ -85,6 +120,9 @@ export default function About() {
                 <div
                   key={index}
                   className={"col-span-1 " + styles.service_block}
+                  data-aos="fade"
+                  data-aos-delay={3 * (index + 1) + "00"}
+                  data-aos-easing="ease-in-sine"
                 >
                   <h3 className={styles.title + " primary-color"}>
                     {service.title}
@@ -100,13 +138,20 @@ export default function About() {
             backgroundImage: "url(/images/employees-in-office-2.png)",
           }}
           className={
-            styles.image_banner + " container-padding flex flex-col justify-end"
+            styles.image_banner +
+            " container-padding flex flex-col justify-end overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

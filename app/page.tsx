@@ -7,6 +7,8 @@ import Link from "next/link";
 import Blog from "./_components/Blog/Blog";
 
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import ShadowDiv from "./_components/ShadowDiv";
 const services = [
   {
     title: "Corporate Law",
@@ -87,7 +89,7 @@ export default function Home() {
       <TopNav />
       <main>
         <section className={styles.hero_section}>
-          <h1>
+          <h1 data-aos="fade">
             <span>a </span>
             <span className="primary-color">
               <Typewriter
@@ -98,15 +100,15 @@ export default function Home() {
                 }}
               />
             </span>
-            <span> law firm.</span>
+            <span> law firm</span>
           </h1>
-          <h1>
+          <h1 data-aos="fade">
             with African roots. We are driven by excellence, professionalism and
             creativity.
           </h1>
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
-          <div className="col-span-1 md:pe-[32px] mb-[40px]">
+        <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px] overflow-hidden">
+          <div className="col-span-1 md:pe-[32px] mb-[40px]" data-aos="fade-up">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               About us
             </p>
@@ -117,7 +119,7 @@ export default function Home() {
               knottiest legal problems and provide creative legal solutions.
             </span>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1" data-aos="fade">
             <p className="p mb-[16px] md:mb-[24px] font-light">
               Danol Partner's legal team has consistently taken a leading role
               in significant cases throughout the years, demonstrating a deep
@@ -151,10 +153,15 @@ export default function Home() {
           style={{
             backgroundImage: "url(/images/happy-employees.png)",
           }}
-          className={styles.image_banner}
-        ></div>
+          className={styles.image_banner + " relative"}
+        >
+          <ShadowDiv />
+        </div>
         <section className="bg-light px-[24px] py-[80px] md:px-[112px] md:py-[160px]">
-          <div className="flex flex-col items-center text-center mb-[40px] md:mb-[128px]">
+          <div
+            className="flex flex-col items-center text-center mb-[40px] md:mb-[128px]"
+            data-aos="fade"
+          >
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               Our Services
             </p>
@@ -173,6 +180,9 @@ export default function Home() {
                 <div
                   key={index}
                   className={"col-span-1 " + styles.service_block}
+                  data-aos="fade"
+                  data-aos-delay={3 * (index + 1) + "00"}
+                  data-aos-easing="ease-in-sine"
                 >
                   <h3 className={styles.title + " primary-color"}>
                     {service.title}
@@ -187,7 +197,7 @@ export default function Home() {
           className={styles.hero_section + " relative " + styles.section_tp}
         >
           <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="col-span-1">
+            <div className="col-span-1" data-aos="fade">
               <div className="mb-[40px] md:mb-[80px]">
                 <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
                   Our Values
@@ -257,9 +267,10 @@ export default function Home() {
           }}
           className={
             styles.image_banner +
-            " flex flex-col justify-center text-white container-padding md:p-[216px]"
+            " flex flex-col justify-center text-white container-padding md:p-[216px] relative"
           }
         >
+          <ShadowDiv />
           <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Team</p>
           <h3 className={styles.h3 + " max-w-[693px]"}>
             Best in class lawyers providing quality legal services.
@@ -271,11 +282,16 @@ export default function Home() {
           </Link>
         </div>
         <section className="container-padding my-[80px] md:mt-[145px]">
-          <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+          <p
+            className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl"
+            data-aos="fade"
+          >
             Our blog
           </p>
-          <h4 className={styles.h2 + " primary-color"}>Read our insights</h4>
-          <h4 className={styles.h2}>
+          <h4 className={styles.h2 + " primary-color"} data-aos="fade">
+            Read our insights
+          </h4>
+          <h4 className={styles.h2} data-aos="fade">
             {" "}
             and stay up to date with our publications
           </h4>

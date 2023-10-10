@@ -19,13 +19,19 @@ export default function BlopPost() {
           }}
           className={
             styles.image_banner +
-            " container-padding flex flex-col justify-end mt-[60px] md:mt-[100px]"
+            " container-padding flex flex-col justify-end mt-[60px] md:mt-[100px] overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

@@ -8,10 +8,13 @@ export default function Blog() {
       <TopNav />
       <main>
         <section className={styles.hero_section}>
-          <p className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+          <p
+            data-aos="fade"
+            className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl"
+          >
             Our Blog
           </p>
-          <h1>
+          <h1 data-aos="fade">
             <span className="primary-color">Read our insights and</span> stay up
             to date with our publications
             <br />
@@ -27,13 +30,19 @@ export default function Blog() {
           }}
           className={
             styles.image_banner +
-            " container-padding flex flex-col justify-end mt-[60px] md:mt-[100px]"
+            " container-padding flex flex-col justify-end mt-[60px] md:mt-[100px]  overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

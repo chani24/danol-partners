@@ -1,3 +1,5 @@
+"use client";
+import ShadowDiv from "../_components/ShadowDiv";
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 const services = [
@@ -301,7 +303,10 @@ export default function Services() {
           <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">
             Our Services
           </p>
-          <h1 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h1
+            data-aos="fade-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             Unwavering focus and expert experience in providing quality legal
             services.
           </h1>
@@ -312,13 +317,17 @@ export default function Services() {
               Our mantra
             </p>
             <span
+              data-aos="fade"
               className={"primary-color " + styles.h2 + " " + styles.h2_large}
             >
               At Danol Partners, our commitment is to deliver exceptional legal
               services, tailored to our clients' unique needs, across these
               diverse practice areas. We{" "}
             </span>
-            <span className={"gray-color " + styles.h2 + " " + styles.h2_large}>
+            <span
+              data-aos="fade"
+              className={"gray-color " + styles.h2 + " " + styles.h2_large}
+            >
               bring together the expertise of our seasoned lawyers to provide
               innovative and effective solutions for today's complex business
               and legal challenges.
@@ -329,10 +338,15 @@ export default function Services() {
           style={{
             backgroundImage: "url(/images/happy-employees.png)",
           }}
-          className={styles.image_banner}
-        ></div>
+          className={styles.image_banner + " relative"}
+        >
+          <ShadowDiv />
+        </div>
         <section className={styles.hero_section}>
-          <div className="flex flex-col items-center text-center mb-[40px] mb:mb-[128px]">
+          <div
+            data-aos="fade"
+            className="flex flex-col items-center text-center mb-[40px] md:mb-[128px]"
+          >
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               Our Services
             </p>
@@ -380,13 +394,20 @@ export default function Services() {
             backgroundImage: "url(/images/happy-employees-2.png)",
           }}
           className={
-            styles.image_banner + " container-padding flex flex-col justify-end"
+            styles.image_banner +
+            " container-padding flex flex-col justify-end  overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

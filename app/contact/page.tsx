@@ -8,7 +8,7 @@ export default function Contact() {
       <main>
         <section className={styles.hero_section}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[80px] gap-y-[40px]">
-            <div className="col-span-1">
+            <div className="col-span-1" data-aos="fade">
               <p className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
                 Contact Us
               </p>
@@ -183,13 +183,20 @@ export default function Contact() {
             backgroundImage: "url(/images/happy-employees-2.png)",
           }}
           className={
-            styles.image_banner + " container-padding flex flex-col justify-end"
+            styles.image_banner +
+            " container-padding flex flex-col justify-end overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="slide-up"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

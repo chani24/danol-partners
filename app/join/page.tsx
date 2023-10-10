@@ -19,7 +19,10 @@ export default function Join() {
           <p className="font-[16px] md:font-[24px] mb-[16px] md:mb-[24px]">
             Join Us
           </p>
-          <h1 className={styles.h3 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h1
+            data-aos="fade-up"
+            className={styles.h3 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             Interested in joining a world-class law firm tackling some of the
             most interesting legal problems of your generation?
           </h1>
@@ -29,13 +32,20 @@ export default function Join() {
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               Danol Partners
             </p>
-            <p className={"primary-color mb-[16px] md:mb-[2px] " + styles.h3}>
+            <p
+              data-aos="fade"
+              className={"primary-color mb-[16px] md:mb-[2px] " + styles.h3}
+            >
               At Danol Partners our lawyers are high-flyers who are passionate
               about the law and obsessed with providing the best commercial
               value for our clients.{" "}
             </p>
             <br />
-            <p className={"gray-color " + styles.h3}>
+            <p
+              data-aos="fade"
+              data-aos-delay="300"
+              className={"gray-color " + styles.h3}
+            >
               We are intentional with our recruitment of best-in-class lawyers
               who have the required skill set to excel in a career in the legal
               services industry. Our lawyers are brilliant and they embody our
@@ -49,13 +59,20 @@ export default function Join() {
             backgroundImage: "url(/images/happy-employees-2.png)",
           }}
           className={
-            styles.image_banner + " container-padding flex flex-col justify-end"
+            styles.image_banner +
+            " container-padding flex flex-col justify-end overflow-hidden"
           }
         >
-          <h4 className={styles.h2 + " max-w-[693px] text-white "}>
+          <h4
+            data-aos="fade"
+            className={styles.h2 + " max-w-[693px] text-white "}
+          >
             we are driven by{" "}
           </h4>
-          <h4 className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}>
+          <h4
+            data-aos="fade"
+            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
+          >
             excellence, creativity & professionalism
           </h4>
         </div>

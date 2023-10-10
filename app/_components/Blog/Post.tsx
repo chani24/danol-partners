@@ -22,9 +22,16 @@ export default function Blog(props: any) {
   return (
     <div className="grid grid-cols-1 mb-[40px] md:mb-[80px]">
       <div className={"col-span-1 " + styles.blog_article}>
-        <p className="dark-color mb-[8px] md:mb-[16px] text-xl">Blog</p>
-        <h2 className={styles.h2 + " primary-color"}>{article.title}</h2>
-        <p className="flex items-end mt-4">
+        <p
+          data-aos="fade-down"
+          className="dark-color mb-[8px] md:mb-[16px] text-xl"
+        >
+          Blog
+        </p>
+        <h2 data-aos="fade-down" className={styles.h2 + " primary-color"}>
+          {article.title}
+        </h2>
+        <p data-aos="fade-down" className="flex items-end mt-4">
           <span className={styles.name}>{article.name}</span>{" "}
           <Dot className="" />
           <span className={"hidden md:block " + styles.time}>
