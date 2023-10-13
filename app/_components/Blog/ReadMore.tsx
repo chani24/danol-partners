@@ -6,7 +6,7 @@ import articles from "./data";
 export default function Blog() {
   const data = articles.slice(1, 3);
   return (
-    <div className="mt-[40px] md:mt-[70px]">
+    <div className="mt-[100px] md:mt-[200px]">
       <p className={"dark-color font-semibold text-xl mb-2 " + styles.title}>
         Read more Blogs
       </p>
