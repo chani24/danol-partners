@@ -4,6 +4,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   padding: 117px 24px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.map_container {
+  position: absolute;
+  top: 0;
+  right: -100px;
+  width: 732.2px;
+  height: 478.8px;
+  opacity: 0.3;
 }
 
 .hero_section.hero_section.section_tp {
@@ -77,6 +88,7 @@
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px;
   min-height: 80%;
+  max-width: 45%;
 }
 
 .animated_border {
@@ -86,6 +98,39 @@
   top: 0;
   left: -4px;
   border-left: 4px solid #87265b;
+}
+
+.resource_container {
+  border-radius: 8px;
+  padding: 16px 24px;
+  background: #f1f1f1;
+  width: 100%;
+}
+
+.resource_container h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.upper_div {
+  height: 36px;
+}
+.upper_div svg {
+  height: 32px;
+  width: 32px;
+}
+
+.resource {
+  height: 0;
+  overflow: hidden;
+}
+.resource_container p:first-of-type {
+  padding-top: 16px;
+}
+.resource_container p {
+  font-size: 18px;
+  margin-top: 4px;
 }
 
 @media screen and (min-width: 767px) {
@@ -129,5 +174,30 @@
   .service_block .title {
     margin: 20px 0;
     font-size: 32px;
+  }
+
+  .map_container {
+    opacity: 1;
+  }
+  .resource_container {
+    width: 800px;
+    max-width: 100%;
+  }
+  .resource_container h4 {
+    font-weight: 600;
+    line-height: 120%;
+  }
+
+  .upper_div {
+    height: 36px;
+  }
+  .upper_div svg {
+    height: 32px;
+    width: 32px;
+  }
+
+  .resource {
+    height: 0;
+    overflow: hidden;
   }
 }

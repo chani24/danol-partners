@@ -7,6 +7,7 @@ const services = [
     title: "Corporate Law",
     details: [
       {
+        id: "fintech",
         title: "Fintech",
         description: (
           <>
@@ -33,6 +34,7 @@ const services = [
         ),
       },
       {
+        id: "banking-finance",
         title: "Banking & Finance",
         description: (
           <>
@@ -51,6 +53,7 @@ const services = [
         ),
       },
       {
+        id: "capital-markets",
         title: "Capital Markets",
         description: (
           <>
@@ -74,6 +77,7 @@ const services = [
         ),
       },
       {
+        id: "mergers-acquisitions",
         title: "Mergers and Acquisitions and Private Equity",
         description: (
           <p>
@@ -87,6 +91,7 @@ const services = [
         ),
       },
       {
+        id: "taxation",
         title: "Taxation",
         description: (
           <>
@@ -112,6 +117,7 @@ const services = [
     title: "Dispute Resolution",
     details: [
       {
+        id: "adr",
         title: "Alternative Dispute Resolution (ADR)",
         description: (
           <>
@@ -131,6 +137,7 @@ const services = [
         ),
       },
       {
+        id: "litigation",
         title: "Litigation",
         description: (
           <>
@@ -160,12 +167,13 @@ const services = [
     title: "Energy, Projects & Infrastructure",
     details: [
       {
+        id: "energy-projects-infrastructure",
         title: "",
         description: (
           <>
             <p>
-              Our Energy Projects & Infrastructure practice group provides legal
-              and commercial services on many complex oil, gas, power, and
+              Our Energy, Projects & Infrastructure practice group provides
+              legal and commercial services on many complex oil, gas, power, and
               mining projects in the upstream, midstream, and downstream energy
               industry. We also advise on the divestment of oil and gas assets.
             </p>
@@ -183,6 +191,7 @@ const services = [
     title: "Intellectual Property & Technology",
     details: [
       {
+        id: "entertainment-law",
         title: "Entertainment Law",
         description: (
           <>
@@ -204,6 +213,7 @@ const services = [
         ),
       },
       {
+        id: "intellectual-property",
         title: "Intellectual Property",
         description: (
           <>
@@ -221,6 +231,7 @@ const services = [
         ),
       },
       {
+        id: "technology-law",
         title: "Technology Law",
         description: (
           <>
@@ -245,6 +256,7 @@ const services = [
     title: "International Trade",
     details: [
       {
+        id: "aviation",
         title: "Aviation",
         description: (
           <p>
@@ -258,6 +270,7 @@ const services = [
         ),
       },
       {
+        id: "international-trade",
         title: "International Trade",
         description: (
           <p>
@@ -270,6 +283,7 @@ const services = [
         ),
       },
       {
+        id: "shipping",
         title: "Shipping",
         description: (
           <p>
@@ -284,6 +298,35 @@ const services = [
       },
     ],
   },
+  {
+    title: "Immigration & International Law",
+    details: [
+      {
+        id: "immigration",
+        title: "Immigration",
+        description: (
+          <p>
+            Our expert team of immigration lawyers is available to assist you
+            with all aspects of the individual and business immigration process.
+            We have an in-depth understanding of the regulatory issues related
+            to employment-based visas, expatriate quotas, business permits, and
+            so on.
+          </p>
+        ),
+      },
+      {
+        id: "international-law",
+        title: "International Law",
+        description: (
+          <p>
+            Danol Partners boasts of a high-profile international law team that
+            is available to advise you on international law issues and
+            representation before international and regional courts.
+          </p>
+        ),
+      },
+    ],
+  },
 ];
 export default function Services() {
   return (
@@ -293,7 +336,7 @@ export default function Services() {
         <div
           style={{
             backgroundImage: "url(/images/happy-employees-3.png)",
-            maxHeight: "550px",
+            maxHeight: "322px",
           }}
           className={
             styles.image_banner +
@@ -303,10 +346,7 @@ export default function Services() {
           <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">
             Our Services
           </p>
-          <h1
-            data-aos="fade-up"
-            className={styles.h2 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
-          >
+          <h1 data-aos="fade-up" className={styles.h2 + " max-w-[693px]"}>
             Unwavering focus and expert experience in providing quality legal
             services.
           </h1>
@@ -376,7 +416,7 @@ export default function Services() {
                   <div className="col-span-1 md:col-span-3">
                     {service.details.map((detail, index) => {
                       return (
-                        <div key={index} className="mb-[20px]">
+                        <div key={index} id={detail.id} className="mb-[20px]">
                           <p className={styles.mini_title}>{detail.title}</p>
                           <p className={styles.description}>
                             {detail.description}

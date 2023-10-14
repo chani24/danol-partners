@@ -1,14 +1,64 @@
+"use client";
+import { useState } from "react";
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
+import Image from "next/image";
 
 export default function Team() {
+  const [lawyers, setLawyers] = useState([
+    {
+      image: "/images/lawyer.png",
+      name: "Alice Smith",
+      title: "Senior Partner",
+    },
+    {
+      image: "/images/lawyer-2.png",
+      name: "Hannah Wilson",
+      title: "Senior Partner",
+    },
+    {
+      image: "/images/lawyer-3.png",
+      name: "Emma Brown",
+      title: "Senior Partner",
+    },
+    {
+      image: "/images/lawyer.png",
+      name: "Bob Johnson",
+      title: "Associate Attorney",
+    },
+    {
+      image: "/images/lawyer-2.png",
+      name: "Fiona Davis",
+      title: "Associate Attorney",
+    },
+    {
+      image: "/images/lawyer-3.png",
+      name: "Charlie Williams",
+      title: "Legal Counsel",
+    },
+    {
+      image: "/images/lawyer.png",
+      name: "George Miller",
+      title: "Legal Counsel",
+    },
+    {
+      image: "/images/lawyer-2.png",
+      name: "Ivy Moore",
+      title: "Junior Associate",
+    },
+    {
+      image: "/images/lawyer-3.png",
+      name: "David Jones",
+      title: "Junior Associate",
+    },
+  ]);
   return (
     <>
       <TopNav />
       <main>
         <div
           style={{
-            backgroundImage: "url(/images/employees.png)",
+            backgroundImage: "url(/images/happy-employees-3.png)",
             maxHeight: "550px",
           }}
           className={
@@ -16,7 +66,7 @@ export default function Team() {
             " text-white container-padding flex flex-col justify-center items-center text-left"
           }
         >
-          <div className=" max-w-[693px] pb-[80px] md:pb-[160px] text-center">
+          <div className=" max-w-[693px text-center">
             <h1 className={styles.h2}>
               Our Lawyers are leaders in their fields.
             </h1>
@@ -37,16 +87,16 @@ export default function Team() {
                 <path
                   d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
                   stroke="#87265B"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M22 22L20 20"
                   stroke="#87265B"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </div>
@@ -56,7 +106,21 @@ export default function Team() {
             </p>
           </div>
         </div>
-        {/*<section className="grid grid-cols-1 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px]"></section>*/}
+        {lawyers.length > 0 && (
+          <section className="grid grid-cols-1 gap-x-[32px] gap-y-[36px] md:grid-cols-3 container-padding my-[80px] md:my-[160px]">
+            {lawyers.map((lawyer, index) => {
+              return (
+                <div key={index} className="col-span-1" data-aos="fade">
+                  <div className=" mb-2 bg-light relative h-[320px] md:h-[340px] xl:h-[410px]">
+                    <Image alt="a lawyer" src={lawyer.image} fill />
+                  </div>
+                  <p className="dark-color font-semibold">{lawyer.name}</p>
+                  <p className="primary-color">{lawyer.title}</p>
+                </div>
+              );
+            })}
+          </section>
+        )}
 
         <div
           style={{

@@ -8,21 +8,16 @@ export default function Join() {
       <main>
         <div
           style={{
-            backgroundImage: "url(/images/happy-employees-3.png)",
-            maxHeight: "550px",
+            backgroundImage: "url(/images/employees.png)",
+            maxHeight: "322px",
           }}
           className={
             styles.image_banner +
             " text-white container-padding flex flex-col justify-center items-center text-center"
           }
         >
-          <p className="font-[16px] md:font-[24px] mb-[16px] md:mb-[24px]">
-            Join Us
-          </p>
-          <h1
-            data-aos="fade-up"
-            className={styles.h3 + " max-w-[693px] pb-[80px] md:pb-[160px]"}
-          >
+          <p className="mb-[16px] md:mb-[24px] font-light">Join Us</p>
+          <h1 data-aos="fade-up" className={styles.h3 + " max-w-[693px]"}>
             Interested in joining a world-class law firm tackling some of the
             most interesting legal problems of your generation?
           </h1>
@@ -43,13 +38,34 @@ export default function Join() {
             <br />
             <p
               data-aos="fade"
-              data-aos-delay="300"
-              className={"gray-color " + styles.h3}
+              className={"gray-color mb-[16px] md:mb-[2px] " + styles.h3}
             >
               We are intentional with our recruitment of best-in-class lawyers
               who have the required skill set to excel in a career in the legal
               services industry. Our lawyers are brilliant and they embody our
               values: culture of excellence, creativity, and professionalism.
+            </p>
+            <br />
+            <p
+              data-aos="fade"
+              className={"primary-color mb-[16px] md:mb-[2px] " + styles.h3}
+            >
+              A career at Danol Partners promises to be a great opportunity. You
+              will work on highly sophisticated and complex transactions. You
+              will also meet people, work in teams, and expand your network.
+            </p>
+            <br />
+            <p
+              data-aos="fade"
+              className={"gray-color mb-[16px] md:mb-[2px] " + styles.h3}
+            >
+              If are interested in working with us, please send your CV to us
+              at: info@danolpartners.com and we will be in touch.
+            </p>
+            <br />
+            <p data-aos="fade" className={"primary-color " + styles.h3}>
+              Note that only applications sent to info@danolpartners.com will be
+              treated
             </p>
           </div>
         </section>

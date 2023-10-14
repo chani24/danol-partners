@@ -7,82 +7,82 @@ import Link from "next/link";
 import Blog from "./_components/Blog/Blog";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
 import ShadowDiv from "./_components/ShadowDiv";
-const services = [
-  {
-    title: "Corporate Law",
-    description:
-      "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
-  },
-  {
-    title: "Dispute Resolution",
-    description:
-      "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
-  },
-  {
-    title: "International Trade",
-    description:
-      "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
-  },
-  {
-    title: "Intellectual Property & Technology",
-    description:
-      "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
-  },
-  {
-    title: "Energy, Projects & Infrastrastructure",
-    description:
-      "Our team of accomplished lawyers exemplify this ethos as they soar to remarkable heights in their pursuit of legal excellence and their unwavering dedication ensures the delivery of unparalleled legal services to our diverse and esteemed clientele.",
-  },
-];
+import gsap from "gsap";
 export default function Home() {
-  const elementRef = useRef<HTMLInputElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-  const [top, setTop] = useState(0);
+  const [resources, setResources] = useState([
+    {
+      title: "Corporate Law",
+      subTitle: [
+        { text: "Fintech", id: "fintech" },
+        { text: "Banking & Finance", id: "banking-finance" },
+        { text: "Capital Markets", id: "capital-markets" },
+        {
+          text: "Mergers and Acquisitions and Private Equity",
+          id: "mergers-acquisitions",
+        },
+        { text: "Taxation", id: "taxation" },
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Dispute Resolution",
+      subTitle: [
+        { text: "Alternative Dispute Resolution (ADR)", id: "adr" },
+        { text: "Litigation", id: "litigation" },
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Energy, Projects & Infrastructure",
+      subTitle: [
+        {
+          text: "Energy, Projects & Infrastructure",
+          id: "energy-projects-infrastructure",
+        },
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Intellectual Property & Technology",
+      subTitle: [
+        { text: "Entertainment Law", id: "entertainment-law" },
+        { text: "Intellectual Property", id: "intellectual-property" },
+        { text: "Technology Law", id: "technology-law" },
+      ],
+      isOpen: false,
+    },
+    {
+      title: "International Trade",
+      subTitle: [
+        { text: "Aviation", id: "aviation" },
+        { text: "International Trade", id: "international-trade" },
+        { text: "Shipping", id: "shipping" },
+      ],
+      isOpen: false,
+    },
+    {
+      title: "Immigration & International Law",
+      subTitle: [
+        { text: "Immigration", id: "immigration" },
+        { text: "International Law", id: "international-law" },
+      ],
+      isOpen: false,
+    },
+  ]);
 
-  // Function to check if the element is in the viewport
-  const manipulateElement = () => {
-    const element = elementRef.current;
-    if (!element) return false;
-
-    const rect = element?.getBoundingClientRect();
-    if (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    ) {
-      const scrollY = rect.top;
-      const maxScroll = 66; // * (window.innerHeight / 100); // 66% of viewport height
-
-      // Calculate the new top position within the range of 0 to maxScroll
-      const newTop = Math.min(Math.max(scrollY, 0), maxScroll);
-
-      //setTop(newTop);
-      //console.log(rect.top);
+  const toggleResource = (index: number) => {
+    const copyOfResources = [...resources];
+    if (copyOfResources[index].isOpen) {
+      copyOfResources[index].isOpen = false;
+      gsap.to(".resource_" + index, { height: 0, duration: 0.5 });
+    } else {
+      copyOfResources[index].isOpen = true;
+      gsap.to(".resource_" + index, { height: "auto", duration: 0.5 });
     }
+
+    setResources(copyOfResources);
   };
-
-  // Function to handle visibility changes
-  const handleVisibility = () => {
-    manipulateElement();
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleVisibility);
-    window.addEventListener("resize", handleVisibility);
-
-    // Initial check when the component mounts
-    handleVisibility();
-
-    // Clean up event listeners when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleVisibility);
-      window.removeEventListener("resize", handleVisibility);
-    };
-  }, []);
 
   return (
     <>
@@ -94,7 +94,7 @@ export default function Home() {
             <span className="primary-color">
               <Typewriter
                 options={{
-                  strings: ["world-class", "legendary", "spectacular"],
+                  strings: ["world-class", "prestigious", "spectacular"],
                   autoStart: true,
                   loop: true,
                 }}
@@ -106,6 +106,9 @@ export default function Home() {
             with African roots. We are driven by excellence, professionalism and
             creativity.
           </h1>
+          <div className={styles.map_container}>
+            <Image alt="world map" src="/images/world-map.svg" fill />
+          </div>
         </section>
         <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px] overflow-hidden">
           <div className="col-span-1 md:pe-[32px] mb-[40px]" data-aos="fade-up">
@@ -121,19 +124,22 @@ export default function Home() {
           </div>
           <div className="col-span-1" data-aos="fade">
             <p className="p mb-[16px] md:mb-[24px] font-light">
-              Danol Partner's legal team has consistently taken a leading role
-              in significant cases throughout the years, demonstrating a deep
-              understanding of the legal landscape. We acknowledge that no two
-              cases are identical.
+              Danol Partners is a full-service law firm established with a
+              resolve to provide creative, practical, and cutting-edge legal
+              solutions to its clients. Our goal is to leave our clients
+              satisfied with our best-in-class, commercially-minded legal
+              advisory/ representation.
             </p>
             <p className="p mb-[16px] md:mb-[24px] font-light">
-              Recognizing and honoring the distinctive intricacies,
-              sensitivities, and difficulties inherent in each case, Danol
-              Partner leverages its extensive experience and expertise to
-              provide clients with expert legal counsel and representation in
-              high-stakes commercial disputes and crisis scenarios. All the
-              while, we remain committed to our fundamental values of
-              excellence, innovation, and professionalism.
+              We are equipped to provide services in different areas of the law
+              which include, but are not limited to; corporate commercial law,
+              mergers and acquisitions, taxation advisory, dispute resolution,
+              aviation law, intellectual property, etc.
+            </p>
+            <p className="p mb-[16px] md:mb-[24px] font-light">
+              Our Lawyers are the crème de la crème of the legal services
+              industry. They are highly skilled, vastly knowledgeable, and
+              extremely experienced on the issues they advise clients on.
             </p>
             <div>
               <Link href="about-us">
@@ -174,20 +180,78 @@ export default function Home() {
               </button>
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px]">
-            {services.map((service, index) => {
+          <div className="flex flex-col items-center gap-5">
+            {resources.map((resource, index) => {
               return (
                 <div
+                  data-aos="fade-up"
                   key={index}
-                  className={"col-span-1 " + styles.service_block}
-                  data-aos="fade"
-                  data-aos-delay={3 * (index + 1) + "00"}
-                  data-aos-easing="ease-in-sine"
+                  className={styles.resource_container}
                 >
-                  <h3 className={styles.title + " primary-color"}>
-                    {service.title}
-                  </h3>
-                  <p className={styles.description}>{service.description}</p>
+                  <div
+                    onClick={() => toggleResource(index)}
+                    className={
+                      "flex justify-between items-center " + styles.upper_div
+                    }
+                  >
+                    <div>
+                      <h4 className="primary-color">{resource.title}</h4>
+                    </div>
+                    <div>
+                      {resource.isOpen ? (
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#87265B"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 5V19"
+                            stroke="#87265B"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5 12H19"
+                            stroke="#87265B"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                  </div>
+                  <div className={styles.resource + " resource_" + index}>
+                    {resource.subTitle.map((title, index) => {
+                      return (
+                        <p key={index}>
+                          <Link href={"/services#" + title.id}>
+                            {title.text}
+                          </Link>
+                        </p>
+                      );
+                    })}{" "}
+                    <span></span>
+                  </div>
                 </div>
               );
             })}
@@ -215,7 +279,6 @@ export default function Home() {
                 style={{
                   borderLeft: "4px solid #E9E9E9",
                 }}
-                ref={elementRef}
               >
                 <div className="pb-5 ps-5">
                   <p className="primary-color font-semibold">
@@ -243,12 +306,7 @@ export default function Home() {
                     of professionalism.
                   </p>
                 </div>
-                <div
-                  className={styles.animated_border}
-                  style={{
-                    top: top + "%", // Add margin to create scrolling space
-                  }}
-                />
+                <div className={styles.animated_border} />
               </div>
             </div>
             <div className={"col-span-1 hidden md:block " + styles.right_image}>
@@ -272,7 +330,7 @@ export default function Home() {
         >
           <ShadowDiv />
           <p className="mb-[8px] md:mb-[16px] text-xl md:text-2xl">Our Team</p>
-          <h3 className={styles.h3 + " max-w-[693px]"}>
+          <h3 className={styles.h3 + " max-w-[550px]"}>
             Best in class lawyers providing quality legal services.
           </h3>
           <Link href="lawyers">
