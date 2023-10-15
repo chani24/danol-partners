@@ -391,8 +391,7 @@ export default function Services() {
               Our Services
             </p>
             <h2 className={"primary-color max-w-[880px] " + styles.h2}>
-              Unwavering focus and expert experience in providing quality legal
-              services.
+              We provide expert legal advice in a wide range of practice areas.
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-[32px] md:gap-y-[64px]">

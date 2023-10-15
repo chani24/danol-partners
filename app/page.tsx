@@ -174,7 +174,7 @@ export default function Home() {
             <h2 className={"primary-color max-w-[880px] " + styles.h2}>
               We provide expert legal advice in a wide range of practice areas.
             </h2>
-            <Link href="about-us">
+            <Link href="services">
               <button className="button button-primary mt-[24px] md:mt-[32px]">
                 Find out more
               </button>
