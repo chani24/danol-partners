@@ -347,8 +347,7 @@ export default function Services() {
             Our Services
           </p>
           <h1 data-aos="fade-up" className={styles.h2 + " max-w-[693px]"}>
-            Unwavering focus and expert experience in providing quality legal
-            services.
+            We provide expert legal advice in a wide range of practice areas.
           </h1>
         </div>
         <section className="grid grid-cols-1 bg-[#F8F8F8] px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
