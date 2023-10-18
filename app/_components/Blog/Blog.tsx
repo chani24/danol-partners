@@ -12,7 +12,7 @@ export default function BlogComponent(props: any) {
           <Link key={index} href={"/blog/post?id=" + index}>
             <div className={"col-span-1 " + styles.blog_article}>
               <Image
-                className="mb-5"
+                className="mb-4"
                 src={`/images/blog/${article.imageUrl}.png`}
                 alt={article.title}
                 width={416}

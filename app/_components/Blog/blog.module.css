@@ -8,7 +8,7 @@
 }
 
 .h2 {
-  font-size: 32px;
+  font-size: 28px;
   line-height: 120%;
   letter-spacing: -0.96px;
 }
@@ -31,9 +31,10 @@
 
 .blog_article .title {
   color: #32041d;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  line-height: 120%;
 }
 
 .blog_article .name {
@@ -58,13 +59,10 @@
   }
 
   .h2 {
-    font-size: 48px;
+    font-size: 40px;
   }
 
-  .blog_article .title {
-    min-height: 80px;
-  }
   .p {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

@@ -28,7 +28,13 @@ export default function Blog(props: any) {
         >
           Blog
         </p>
-        <h2 data-aos="fade-down" className={styles.h2 + " primary-color"}>
+        <h2
+          data-aos="fade-down"
+          style={{
+            maxWidth: "700px",
+          }}
+          className={styles.h2 + " primary-color"}
+        >
           {article.title}
         </h2>
         <p data-aos="fade-down" className="flex items-end mt-4">

@@ -9,8 +9,8 @@ export default function Contact() {
       <main>
         <section className={styles.hero_section}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[80px] gap-y-[40px]">
-            <div className="col-span-1" data-aos="fade">
-              <p className="primary-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
+            <div className="col-span-1 md:mb-[80px]" data-aos="fade">
+              <p className="primary-color mb-[8px] md:mb-[16px] text-2xl md:text-3xl">
                 Contact Us
               </p>
               <h1>We would love to hear from you!</h1>

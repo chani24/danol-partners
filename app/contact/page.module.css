@@ -1,6 +1,6 @@
 .hero_section {
   min-height: calc(100vh - 100px);
-  background-image: url("/images/square-background..social_logo");
+  background-image: url("/images/square-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 200%;
@@ -85,9 +85,10 @@
     background-size: auto;
     background-repeat: repeat-x;
   }
+
   .hero_section h1 {
     max-width: 850px;
-    font-size: 64px;
+    font-size: 48px;
     margin-bottom: 8px;
   }
 

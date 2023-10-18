@@ -96,22 +96,22 @@ export default function TopNav(props: {
           )}
         </div>
         <div className="hidden md:flex gap-[36px]">
-          <Link className={styles.nav_link} href="about-us">
+          <Link className={styles.nav_link} href="/about-us">
             About
           </Link>
-          <Link className={styles.nav_link} href="services">
+          <Link className={styles.nav_link} href="/services">
             Services
           </Link>
-          <Link className={styles.nav_link} href="team">
+          <Link className={styles.nav_link} href="/team">
             Team
           </Link>
-          <Link className={styles.nav_link} href="join">
+          <Link className={styles.nav_link} href="/join">
             Join Us
           </Link>
-          <Link className={styles.nav_link} href="blog">
+          <Link className={styles.nav_link} href="/blog">
             Blog
           </Link>
-          <Link className={styles.nav_link} href="contact">
+          <Link className={styles.nav_link} href="/contact">
             Contact
           </Link>
         </div>
@@ -123,19 +123,19 @@ export default function TopNav(props: {
             <Link href="about-us">About</Link>
           </div>
           <div>
-            <Link href="services">Services</Link>
+            <Link href="/services">Services</Link>
           </div>
           <div>
-            <Link href="team">Team</Link>
+            <Link href="/team">Team</Link>
           </div>
           <div>
-            <Link href="join">Join Us</Link>
+            <Link href="/join">Join Us</Link>
           </div>
           <div>
-            <Link href="blog">Blog</Link>
+            <Link href="/blog">Blog</Link>
           </div>
           <div>
-            <Link href="contact">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
         </div>
       </div>

@@ -13,20 +13,26 @@
   background: #fff;
   color: #87265b;
   padding: 12px 24px 12px 48px;
+  font-size: 16px;
 }
 
 .search_icon {
   position: absolute;
-  top: 12px;
+  top: 14px;
   left: 12px;
+  width: 20px;
+  height: 20px;
 }
 
 .h2 {
-  font-size: 32px;
+  font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.96px;
 }
 
+h4.h2 {
+  font-size: 32px;
+}
 @media screen and (min-width: 767px) {
   .image_banner {
     width: 100%;
@@ -34,13 +40,13 @@
   }
 
   .input {
-    height: 70px;
+    height: 55px;
     padding: 24px 40px 24px 84px;
   }
 
   .search_icon {
     position: absolute;
-    top: 23px;
+    top: 17.5px;
     left: 40px;
   }
 
@@ -50,9 +56,6 @@
     letter-spacing: -1.44px;
   }
   .h2 {
-    font-size: 40px;
-  }
-  .h2_large {
-    font-size: 48px;
+    font-size: 24px;
   }
 }

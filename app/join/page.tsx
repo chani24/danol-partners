@@ -8,7 +8,7 @@ export default function Join() {
       <main>
         <div
           style={{
-            backgroundImage: "url(/images/employees.png)",
+            backgroundImage: "url(/images/lawyers.png)",
             maxHeight: "322px",
           }}
           className={
@@ -16,54 +16,35 @@ export default function Join() {
             " text-white container-padding flex flex-col justify-center items-center text-center"
           }
         >
-          <p className="mb-[16px] md:mb-[24px] font-light">Join Us</p>
+          <p className="mb-[12px] font-light">Join Us</p>
           <h1 data-aos="fade-up" className={styles.h3 + " max-w-[693px]"}>
             Interested in joining a world-class law firm tackling some of the
             most interesting legal problems of your generation?
           </h1>
         </div>
-        <section className="grid grid-cols-1 bg-[#F8F8F8] px-[24px] py-[80px] md:px-[117px] md:py-[160px]">
-          <div className="col-span-1 md:pe-[32px] mb-[40px]">
-            <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
-              Danol Partners
-            </p>
-            <p
-              data-aos="fade"
-              className={"primary-color mb-[16px] md:mb-[2px] " + styles.h3}
-            >
+        <section className="grid grid-cols-1 bg-[#F8F8F8] px-[24px] py-[40px] md:px-[200px] md:py-[80px]">
+          <div className=" text-[#10060B] col-span-1 md:pe-[32px] mb-[40px]">
+            <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
               At Danol Partners our lawyers are high-flyers who are passionate
               about the law and obsessed with providing the best commercial
               value for our clients.{" "}
             </p>
-            <br />
-            <p
-              data-aos="fade"
-              className={"gray-color mb-[16px] md:mb-[2px] " + styles.h3}
-            >
+            <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
               We are intentional with our recruitment of best-in-class lawyers
               who have the required skill set to excel in a career in the legal
               services industry. Our lawyers are brilliant and they embody our
               values: culture of excellence, creativity, and professionalism.
             </p>
-            <br />
-            <p
-              data-aos="fade"
-              className={"primary-color mb-[16px] md:mb-[2px] " + styles.h3}
-            >
+            <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
               A career at Danol Partners promises to be a great opportunity. You
               will work on highly sophisticated and complex transactions. You
               will also meet people, work in teams, and expand your network.
             </p>
-            <br />
-            <p
-              data-aos="fade"
-              className={"gray-color mb-[16px] md:mb-[2px] " + styles.h3}
-            >
+            <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
               If are interested in working with us, please send your CV to us
               at: info@danolpartners.com and we will be in touch.
             </p>
-            <br />
-            <p data-aos="fade" className={"primary-color " + styles.h3}>
+            <p data-aos="fade">
               Note that only applications sent to info@danolpartners.com will be
               treated
             </p>
@@ -72,7 +53,7 @@ export default function Join() {
 
         <div
           style={{
-            backgroundImage: "url(/images/happy-employees-2.png)",
+            backgroundImage: "url(/images/employees-in-office-3.png)",
           }}
           className={
             styles.image_banner +

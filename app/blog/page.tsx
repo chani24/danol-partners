@@ -20,7 +20,7 @@ export default function Blog() {
             <br />
           </h1>
         </section>
-        <div className="container-padding">
+        <div className={styles.mini_hero_section}>
           <BlogComponent articleNumber={9} />
         </div>
 

@@ -66,7 +66,7 @@ export default function Team() {
             " text-white container-padding flex flex-col justify-center items-center text-left"
           }
         >
-          <div className=" max-w-[693px text-center">
+          <div className=" w-[593px] max-w-full text-center">
             <h1 className={styles.h2}>
               Our Lawyers are leaders in their fields.
             </h1>
@@ -102,7 +102,10 @@ export default function Team() {
             </div>
 
             <p>
-              Search by: <span>name, position, leadership position</span>
+              <span style={{ color: "rgba(255, 255, 255, 0.80)" }}>
+                Search by:{" "}
+              </span>
+              <span>name, position, leadership position</span>
             </p>
           </div>
         </div>
@@ -124,7 +127,7 @@ export default function Team() {
 
         <div
           style={{
-            backgroundImage: "url(/images/happy-employees-2.png)",
+            backgroundImage: "url(/images/employees-in-office-3.png)",
           }}
           className={
             styles.image_banner +
