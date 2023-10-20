@@ -1,5 +1,5 @@
 .hero_section {
-  min-height: calc(100vh - 200px);
+  min-height: 450px;
   background-image: url("/images/square-background.svg");
   background-size: cover;
   background-repeat: no-repeat;

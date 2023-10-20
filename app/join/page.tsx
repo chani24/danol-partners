@@ -45,8 +45,8 @@ export default function Join() {
               at: info@danolpartners.com and we will be in touch.
             </p>
             <p data-aos="fade">
-              Note that only applications sent to info@danolpartners.com will be
-              treated
+              Please note that only applications sent to info@danolpartners.com
+              will be treated.
             </p>
           </div>
         </section>

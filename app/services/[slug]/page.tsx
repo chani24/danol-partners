@@ -82,7 +82,7 @@ const services = [
         title: "Mergers and Acquisitions and Private Equity",
         description: (
           <p data-aos="fade">
-            Our M&A and PE team boasts of ateam of lawyers who have years of
+            Our M&A and PE team boasts of a team of lawyers who have years of
             experience in advising on M & A and PE deals. Our team is able to
             advise on all stages of M&A transactions in various sectors from the
             due diligence stage to the deals stage. Our lawyers also advise on
@@ -124,9 +124,9 @@ const services = [
           <>
             <p data-aos="fade">
               Our dispute resolution team represents clients in arbitration and
-              all other forms of alternative dispute resolution on behalf of its
-              clients. The practice group ensures that matters are resolved
-              quickly, without recourse to long courtroom battles.
+              all other forms of alternative dispute resolution. The practice
+              group ensures that matters are resolved quickly, without recourse
+              to long courtroom battles.
             </p>
             <p data-aos="fade">
               Our arbitration team is well-versed in arbitration rules like ICC
@@ -174,12 +174,12 @@ const services = [
           <>
             <p data-aos="fade">
               Our Energy, Projects & Infrastructure practice group provides
-              legal and commercial services on many complex oil, gas, power, and
+              legal and commercial services on complex oil, gas, power, and
               mining projects in the upstream, midstream, and downstream energy
               industry. We also advise on the divestment of oil and gas assets.
             </p>
             <p data-aos="fade">
-              We are knowledgeable in all areas of infrastructure financing an
+              We are knowledgeable in all areas of infrastructure financing and
               development, and we advise clients on issues ranging from
               financing to planning and construction.
             </p>
@@ -277,9 +277,9 @@ const services = [
           <p data-aos="fade">
             Our international trade team is well-versed in all national and
             international laws guiding international trade, customs regulations,
-            tariffs, etc. within Nigeria. Our lawyers are well equipped to
-            advice clients on any risk or disputes that may arise in the course
-            of their cross-border trade.
+            tariffs, etc. within Nigeria. Our lawyers are equipped to advice
+            clients on any risk or disputes that may arise in the course of
+            their cross-border trade.
           </p>
         ),
       },
