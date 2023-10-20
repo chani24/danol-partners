@@ -30,7 +30,7 @@ export default function Blog() {
           }}
           className={
             styles.image_banner +
-            " container-padding flex flex-col justify-end mt-[30px] md:mt-[80px]  overflow-hidden"
+            " container-padding flex flex-col justify-end md:mt-[80px]  overflow-hidden"
           }
         >
           <h4
