@@ -1,13 +1,13 @@
 .hero_section {
-  height: 320px;
+  height: 210px;
   background-image: url("/images/square-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 117px 24px;
+  padding: 60px 24px 40px 24px;
 }
 
 .mini_hero_section {
-  padding: 40px 24px;
+  padding: 20px 24px;
 }
 
 .post_main {
@@ -42,11 +42,11 @@
   .hero_section {
     background-position: 50% 50%;
     padding: 117px 140px;
-    height: calc(100vh - 250px);
+    height: 320px;
   }
 
   .mini_hero_section {
-    padding: 80px 140px;
+    padding: 30px 140px;
   }
 
   .h2 {
