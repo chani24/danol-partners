@@ -1,7 +1,7 @@
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 
-export default function Join() {
+export default function Careers() {
   return (
     <>
       <TopNav />
@@ -16,7 +16,7 @@ export default function Join() {
             " text-white container-padding flex flex-col justify-center items-center text-center"
           }
         >
-          <p className="mb-[12px] font-light">Join Us</p>
+          <p className="mb-[12px] font-light">Careers</p>
           <h1 data-aos="fade-up" className={styles.h3 + " max-w-[693px]"}>
             Interested in joining a world-class law firm tackling some of the
             most interesting legal problems of your generation?
@@ -25,7 +25,7 @@ export default function Join() {
         <section className="grid grid-cols-1 bg-[#F8F8F8] px-[24px] py-[40px] md:px-[200px] md:py-[80px]">
           <div className=" text-[#10060B] col-span-1 md:pe-[32px] mb-[40px]">
             <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
-              At Danol Partners our lawyers are high-flyers who are passionate
+              At Danol Partners, our lawyers are high-flyers who are passionate
               about the law and obsessed with providing the best commercial
               value for our clients.{" "}
             </p>

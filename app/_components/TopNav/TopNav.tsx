@@ -105,8 +105,8 @@ export default function TopNav(props: {
           <Link className={styles.nav_link} href="/team">
             Team
           </Link>
-          <Link className={styles.nav_link} href="/join">
-            Join Us
+          <Link className={styles.nav_link} href="/careers">
+            Careers
           </Link>
           <Link className={styles.nav_link} href="/blog">
             Blog
@@ -129,7 +129,7 @@ export default function TopNav(props: {
             <Link href="/team">Team</Link>
           </div>
           <div>
-            <Link href="/join">Join Us</Link>
+            <Link href="/careers">Careers</Link>
           </div>
           <div>
             <Link href="/blog">Blog</Link>
