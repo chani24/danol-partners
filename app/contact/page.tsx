@@ -1,8 +1,38 @@
+"use client";
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 import Image from "next/image";
 
+import { linstance } from "../_lib/api";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+
 export default function Contact() {
+  const [buttonText, setButtonText] = useState("Submit");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (values: any) => {
+    setButtonText("Loading...");
+    console.log("here");
+    linstance
+      .post("/api/contact", values)
+      .then(() => {
+        setButtonText("Submitted");
+        reset();
+        setTimeout(() => {
+          setButtonText("Submit");
+        }, 5000);
+      })
+      .catch(() => {
+        setButtonText("Submit");
+      });
+  };
+
   return (
     <>
       <TopNav />
@@ -17,23 +47,56 @@ export default function Contact() {
             </div>
             <div className="col-span-1 hidden md:block"></div>
             <div className="col-span-1">
-              <form>
+              <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="grid grid-cols-1 gap-[16px]">
                   <div className="col-span-1">
-                    <label>Full Name</label>
-                    <input />
+                    <label>Full Name*</label>
+                    <input
+                      {...register("fullName", {
+                        required: "Name is required",
+                      })}
+                    />
+                    {errors.fullName && (
+                      <span className="error-message">
+                        {errors?.fullName?.message?.toString()}
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-1">
-                    <label>Email Address</label>
-                    <input />
+                    <label>Email Address*</label>
+                    <input
+                      type="email"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern:
+                          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      })}
+                    />
+                    {errors.email && (
+                      <span className="error-message">
+                        {errors?.email?.message?.toString()}
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-1">
-                    <label>Message</label>
-                    <textarea />
+                    <label>Message*</label>
+                    <textarea
+                      {...register("message", {
+                        required: "Message is required",
+                      })}
+                    />
+                    {errors.message && (
+                      <span className="error-message">
+                        {errors?.message?.message?.toString()}
+                      </span>
+                    )}
                   </div>
                   <div className="col-span-1">
-                    <button className="button button-primary w-full">
-                      Submit
+                    <button
+                      type="submit"
+                      className="button button-primary w-full"
+                    >
+                      {buttonText}
                     </button>
                   </div>
                 </div>

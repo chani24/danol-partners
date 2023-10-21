@@ -13,7 +13,7 @@ const services = [
         description: (
           <>
             <p data-aos="fade">
-              The use of technology in the finance sector cannot be
+              The role of technology in the finance sector cannot be
               overemphasized. As a result, the application of technological
               solutions and innovations to financial services has increased over
               the last couple of years.
