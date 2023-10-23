@@ -1,9 +1,12 @@
 .hero_section {
-  height: 210px;
+  height: 500px;
   background-image: url("/images/square-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 60px 24px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mini_hero_section {
@@ -42,7 +45,7 @@
   .hero_section {
     background-position: 50% 50%;
     padding: 117px 140px;
-    height: 320px;
+    height: calc(100vh - 300px);
   }
 
   .mini_hero_section {

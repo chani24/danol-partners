@@ -1,5 +1,5 @@
 .hero_section {
-  min-height: 400px;
+  min-height: 500px;
   background-image: url("/images/square-background.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,7 +69,7 @@
   .hero_section {
     background-position: 50% 50%;
     padding: 117px 140px;
-    min-height: calc(100vh - 250px);
+    min-height: calc(100vh - 200px);
   }
 
   .hero_section.section_tp {
