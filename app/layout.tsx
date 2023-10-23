@@ -9,11 +9,11 @@ export const metadata: Metadata = {
     title: "Danol Partners | A world-class law firm with African roots",
     description:
       "Danol Partners is a full-service law firm established with a resolve to provide creative, practical, and cutting-edge legal solutions to its clients.",
-    url: "https://www.danolparters.com",
+    url: "https://www.danolpartners.com",
     siteName: "Danol Partners",
     images: [
       {
-        url: "https://www.danolparters.com/images/large-og.jpg",
+        url: "https://www.danolpartners.com/images/large-og.jpg",
         width: 1200,
         height: 630,
       },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteId: "",
     creator: "",
     creatorId: "",
-    images: ["https://www.danolparters.com/images/large-og.jpg"],
+    images: ["https://www.danolpartners.com/images/large-og.jpg"],
   },
 };
 
