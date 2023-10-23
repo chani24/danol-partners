@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     siteName: "Danol Partners",
     images: [
       {
-        url: "https://danolparters.com/images/large-og.png",
-        width: 1197,
-        height: 698,
+        url: "https://danolparters.com/images/large-og.jpg",
+        width: 1200,
+        height: 630,
       },
     ],
     locale: "en_US",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteId: "",
     creator: "",
     creatorId: "",
-    images: ["https://danolparters.com/images/large-og.png"],
+    images: ["https://danolparters.com/images/large-og.jpg"],
   },
 };
 
