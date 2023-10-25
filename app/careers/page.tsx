@@ -41,8 +41,8 @@ export default function Careers() {
               will also meet people, work in teams, and expand your network.
             </p>
             <p data-aos="fade" className={"mb-[16px] md:mb-[24px] "}>
-              If are interested in working with us, please send your CV to us
-              at: info@danolpartners.com and we will be in touch.
+              If you are interested in working with us, please send your CV to
+              us at: info@danolpartners.com and we will be in touch.
             </p>
             <p data-aos="fade">
               Please note that only applications sent to info@danolpartners.com

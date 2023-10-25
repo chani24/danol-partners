@@ -105,7 +105,7 @@ export default function Contact() {
             <div className="col-span-1 flex items-center">
               <div className="grid grid-cols-1 gap-[32px]">
                 <h3 className={styles.h3 + " col-span-1 md:pb-[32px]"}>
-                  You can also reach out via the following.
+                  You can also reach out via the following:
                 </h3>
                 <div className="col-span-1">
                   <label>Email</label>
@@ -141,7 +141,7 @@ export default function Contact() {
         </section>
         <div
           style={{
-            backgroundImage: "url(/images/happy-employees-2.png)",
+            backgroundImage: "url(/images/employees-in-office-2.png)",
           }}
           className={
             styles.image_banner +
