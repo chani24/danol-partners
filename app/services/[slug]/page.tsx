@@ -371,7 +371,7 @@ export default function Services({ params }: { params: { slug: string } }) {
         <section className="grid grid-cols-1 bg-[#F8F8F8] px-[24px] py-[40px] md:px-[250px] md:py-[80px]">
           <div className="text-[#10060B] col-span-1 grid grid-cols-1 gap-[16px] gap-[24px] md:pe-[32px] mb-[40px]">
             <p className="primary-color text-base font-semibold">
-              {services?.title} {services?.detail?.title && ">"}{" "}
+<span className={styles.title_gray}>{services?.title} {services?.detail?.title && ">"}</span>{" "}
               {services?.detail?.title}
             </p>
 
