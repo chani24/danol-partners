@@ -1,4 +1,4 @@
-const baseUrl = process.env.STRAPI_API_ENDPOINT;
+const baseUrl = process.env.NEXT_PUBLIC_STRAPI_API_ENDPOINT;
 
 export async function fetcher(url: string) {
     try {

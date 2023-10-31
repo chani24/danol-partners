@@ -1,57 +1,65 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TopNav from "../_components/TopNav/TopNav";
 import styles from "./page.module.css";
 import Image from "next/image";
 
+import { fetcher, imageLoader } from "@/app/_lib/strapi-rest";
+
 export default function Team() {
   const [lawyers, setLawyers] = useState([
-    {
-      image: "/images/lawyer.png",
-      name: "Alice Smith",
-      title: "Senior Partner",
-    },
-    {
-      image: "/images/lawyer-2.png",
-      name: "Hannah Wilson",
-      title: "Senior Partner",
-    },
-    {
-      image: "/images/lawyer-3.png",
-      name: "Emma Brown",
-      title: "Senior Partner",
-    },
-    {
-      image: "/images/lawyer.png",
-      name: "Bob Johnson",
-      title: "Associate Attorney",
-    },
-    {
-      image: "/images/lawyer-2.png",
-      name: "Fiona Davis",
-      title: "Associate Attorney",
-    },
-    {
-      image: "/images/lawyer-3.png",
-      name: "Charlie Williams",
-      title: "Legal Counsel",
-    },
-    {
-      image: "/images/lawyer.png",
-      name: "George Miller",
-      title: "Legal Counsel",
-    },
-    {
-      image: "/images/lawyer-2.png",
-      name: "Ivy Moore",
-      title: "Junior Associate",
-    },
-    {
-      image: "/images/lawyer-3.png",
-      name: "David Jones",
-      title: "Junior Associate",
-    },
   ]);
+
+  const [searchMessage, setSearchMessage] = useState("");
+
+  const handleInput = (e: any) => {
+    const query = e.target.value;
+    if (query === ""){
+      fetcher(
+        `/api/lawyers?populate=*`
+      )
+        .then((data) => {
+          const lawyers = data.data;
+          if (lawyers.length < 1) {
+            setLawyers([]);
+          } else {
+            setLawyers(lawyers);
+          }
+        })
+    }
+   else if (Boolean(query)) {
+      fetcher(
+        `/api/lawyers?populate=*&filters[firstName][$containsi]=${query}&[lastName][$containsi]=${query}&[profession][$containsi]=${query}&pagination[pageSize]=3&pagination[page]=1`
+      )
+        .then((data) => {
+          const lawyers = data.data;
+          if (lawyers.length < 1) {
+            setSearchMessage("No Lawyer found");
+            setLawyers([]);
+          } else {
+            setSearchMessage("");
+            setLawyers(lawyers);
+          }
+        })
+        .catch((e) => setSearchMessage("Lawyer not found"));
+    } else {
+      setLawyers([]);
+    }
+  };
+
+  useEffect(()=>{
+    fetcher(
+      `/api/lawyers?populate=*`
+    )
+      .then((data) => {
+        const lawyers = data.data;
+        if (lawyers.length < 1) {
+          setLawyers([]);
+        } else {
+          setLawyers(lawyers);
+        }
+      })
+  }, [])
   return (
     <>
       <TopNav />
@@ -72,6 +80,7 @@ export default function Team() {
             </h1>
             <div className="relative my-4">
               <input
+              onChange={handleInput}
                 className={styles.input}
                 type="text"
                 placeholder="Search for Lawyers"
@@ -100,7 +109,11 @@ export default function Team() {
                 />
               </svg>
             </div>
-
+            {searchMessage && (
+          <div className="text-center pt-5 text-gray-600 text-lg">
+            {searchMessage}
+          </div>
+        )}
             <p>
               <span style={{ color: "rgba(255, 255, 255, 0.80)" }}>
                 Search by:{" "}
@@ -111,14 +124,22 @@ export default function Team() {
         </div>
         {lawyers.length > 0 && (
           <section className="grid grid-cols-1 gap-x-[32px] gap-y-[36px] md:grid-cols-3 container-padding my-[80px] md:my-[160px]">
-            {lawyers.map((lawyer, index) => {
+            {lawyers.map((lawyer: {
+              attributes: {
+                firstName: string;
+                    lastName: string;
+                role: string;
+                image: { data: {attributes: {url: string}}};
+              }
+            }, index: number) => {
               return (
-                <div key={index} className="col-span-1" data-aos="fade">
+                <div key={index} className="col-span-1">
                   <div className=" mb-2 bg-light relative h-[320px] md:h-[340px] xl:h-[410px]">
-                    <Image alt="a lawyer" src={lawyer.image} fill />
+                    <Image loader={imageLoader} alt="a lawyer" src={lawyer?.attributes?.image?.data?.attributes?.url} fill />
                   </div>
-                  <p className="dark-color font-semibold">{lawyer.name}</p>
-                  <p className="primary-color">{lawyer.title}</p>
+                  <p className="dark-color font-semibold">{lawyer?.attributes?.firstName}{" "}
+                              {lawyer?.attributes?.lastName}</p>
+                  <p className="primary-color">{lawyer?.attributes?.role}</p>
                 </div>
               );
             })}
@@ -131,7 +152,7 @@ export default function Team() {
           }}
           className={
             styles.image_banner +
-            " container-padding flex flex-col justify-end overflow-hidden"
+            " container-padding flex flex-col justify-end overflow-hidden mt-[40px]"
           }
         >
           <h4

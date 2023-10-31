@@ -1,16 +1,19 @@
+'use client';
 import ReadMore from "@/app/_components/Blog/ReadMore";
 import TopNav from "@/app/_components/TopNav/TopNav";
 import styles from "../page.module.css";
 import Post from "@/app/_components/Blog/Post";
 
-export default function BlopPost() {
+export default function BlopPost(props: {searchParams: {
+  id: string;
+}}) {
   return (
     <>
       <TopNav />
       <main>
         <section className={styles.post_main}>
-          <Post />
-          <ReadMore />
+          <Post articleId={props.searchParams.id} />
+          <ReadMore articleId={props.searchParams.id} />
         </section>
 
         <div

@@ -2,9 +2,15 @@ import Image from "next/image";
 
 import styles from "./blog.module.css";
 import Link from "next/link";
-import articles from "./data";
+import useSWR from "swr";
+import { fetcher, imageLoader } from "@/app/_lib/strapi-rest";
+import formatDate from "@/app/_lib/formatDate";
 export default function Blog(props: any) {
-  const article = articles[0];
+
+  const { data } = useSWR(
+    "/api/blogs/" + props.articleId + "?populate=*",
+    fetcher
+  );
   const Dot = (props: { className: string | undefined }) => {
     return (
       <svg
@@ -35,58 +41,32 @@ export default function Blog(props: any) {
           }}
           className={styles.h2 + " primary-color"}
         >
-          {article.title}
+          {data?.data?.attributes?.title}
         </h2>
         <p data-aos="fade-down" className="flex items-end mt-4">
-          <span className={styles.name}>{article.name}</span>{" "}
+          <span className={styles.name}>{data?.data?.attributes?.fullName}</span>{" "}
           <Dot className="" />
           <span className={"hidden md:block " + styles.time}>
-            {article.time} mins read
+          {data?.data?.attributes?.length} mins read
           </span>
           <Dot className="hidden md:block" />
-          <span className={styles.time}>3rd September, 2023</span>
+          <span className={styles.time}>{formatDate(data?.data?.attributes?.publishedAt)}</span>
         </p>
         <Image
+        loader={imageLoader}
           className="mb-5 mt-[40px]  md:mt-[80px] mb-[32px] md:mb-[40px]"
-          src={`/images/blog/7.png`}
-          alt={article.title}
+          alt={data?.data?.attributes?.title + ' article banner'}
+          src={data?.data?.attributes?.image?.data?.attributes?.url}
           width={416}
           height={317}
         />
-
-        <p className={styles.p}>
-          Google Search is a search engine provided and operated by Google.
-          Handling more than 3.5 billion searches per day, it has a 92% share of
-          the global search engine market. It is the most-visited website in the
-          world. Additionally, it is the most searched and used search engine in
-          the entire world.
+{data?.data?.attributes?.body.map((text: any, index: any)=>{
+  return(
+<p className={styles.p} key={index}>
+          {text.children[0].text}
         </p>
-        <p className={styles.p}>
-          Described by clients as “a formidable force”, “our go-to guy” and
-          “good when you need someone to fight your corner”, Danny brings a
-          wealth of experience, commercial acumen and strategic wisdom to his
-          specialist areas of complex international commercial and financial
-          disputes and investigations, as well as cross-border restructuring and
-          insolvency.
-        </p>
-        <p className={styles.p}>
-          Our founder experienced the loss of her mother at the age of 5, and
-          growing up without a maternal figure, made her realise the importance
-          of mothers in the socialisation of a child. With this in mind, she
-          decided to ensure that no child or mother has to deal with the loss I
-          experienced.
-        </p>
-        <p className={styles.p}>
-          The UX field is very wide, and those who really learn seriously would
-          know that. On my side, every day I swim in tabs to read and learn
-          deeper to upgrade my knowledge, and the practice is never enough. The
-          trend is over, so, entry-level UX Designers, let’s face the truth that
-          now it is not easy and quick for you to switch to a UX career in a
-          couple of months anymore. However, yeah, this is a chance for you to
-          sit back and analyze yourself if you really have passion for this
-          field or if it was because of the trend. Ask yourself if you are ok to
-          take critiques on your design every day from stakeholders.
-        </p>
+  )
+})}
       </div>
     </div>
   );
