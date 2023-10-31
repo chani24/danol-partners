@@ -41,6 +41,30 @@
   letter-spacing: -0.96px;
 }
 
+@keyframes bounce {
+  0% { transform: translateY(-10px) }
+  40% { transform: translateY(10px) }
+  100% { transform: translateY(-10px) }
+}
+
+.scroll_button{
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 30px);
+  background-color: #87265b; 
+  border-radius: 50%;
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  -o-animation: bounce 2s infinite ease-in-out;
+  -ms-animation: bounce 2s infinite ease-in-out; 
+  -moz-animation: bounce 2s infinite ease-in-out; 
+  animation: bounce 2s infinite ease-in-out;
+  }
+
 @media screen and (min-width: 767px) {
   .hero_section {
     background-position: 50% 50%;

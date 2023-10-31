@@ -5,10 +5,18 @@ import TopNav from "./_components/TopNav/TopNav";
 import styles from "./page.module.css";
 import Link from "next/link";
 
+import gsap from "gsap";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(()=>{
+    gsap.registerPlugin(ScrollToPlugin);
+  }, [])
   return (
     <>
       <TopNav />
+      
       <main>
         <section className={styles.hero_section}>
           <h1 data-aos="fade">
@@ -32,7 +40,12 @@ export default function Home() {
             <Image alt="world map" src="/images/world-map.svg" fill />
           </div>
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px] overflow-hidden">
+        <div className="relative">
+          <div className={styles.scroll_button} onClick={()=>gsap.to(window, { duration: 0.8, scrollTo: "#about", offsetY:'70px', autoKill: true })}>
+      <Image alt="arrow down" height={24} width={24} src="/images/arrow-down.svg"/>
+      </div>
+          </div>
+        <section id="about" className="grid grid-cols-1 md:grid-cols-2 bg-light px-[24px] py-[80px] md:px-[117px] md:py-[160px] overflow-hidden">
           <div className="col-span-1 md:pe-[32px] mb-[40px]" data-aos="fade-up">
             <p className="dark-color mb-[8px] md:mb-[16px] text-xl md:text-2xl">
               About us
