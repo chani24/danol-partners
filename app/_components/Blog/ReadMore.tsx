@@ -21,7 +21,7 @@ export default function Blog(props: {articleId: string;}) {
                     image: { data: { attributes: { url: string } } };
                     fullName: string;
                     title: string;
-                    body: [{children: [{text: string}]}];
+                    text: [{children: [{text: string}]}];
                     length: number;
                   };
                 },
@@ -40,7 +40,7 @@ export default function Blog(props: {articleId: string;}) {
                 height={317}
               />
               <p className={styles.title}>{article?.attributes?.title}</p>
-              <p className={styles.text}>{article?.attributes?.body[0].children[0].text}...</p>
+              <p className={styles.text}>{article?.attributes?.text[0].children[0].text}...</p>
               <p className="flex items-end mt-4">
                 <span className={styles.name}>{article?.attributes?.fullName}</span>{" "}
                 <svg

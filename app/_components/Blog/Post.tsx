@@ -60,7 +60,7 @@ export default function Blog(props: any) {
           width={416}
           height={317}
         />
-{data?.data?.attributes?.body.map((text: any, index: any)=>{
+{data?.data?.attributes?.text.map((text: any, index: any)=>{
   return(
 <p className={styles.p} key={index}>
           {text.children[0].text}
