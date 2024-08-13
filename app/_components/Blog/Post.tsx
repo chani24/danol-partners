@@ -66,7 +66,7 @@ export default function Blog(props: any) {
         {data?.data?.attributes?.text.map((obj: any, index: any) => {
           if (obj.type === "heading") {
             return (
-              <h3 className="heading" key={index}>
+              <h3 className={styles.heading} key={index}>
                 {obj.children[0].text}
               </h3>
             );
