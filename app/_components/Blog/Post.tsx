@@ -6,7 +6,6 @@ import useSWR from "swr";
 import { fetcher, imageLoader } from "@/app/_lib/strapi-rest";
 import formatDate from "@/app/_lib/formatDate";
 export default function Blog(props: any) {
-
   const { data } = useSWR(
     "/api/blogs/" + props.articleId + "?populate=*",
     fetcher
@@ -44,29 +43,52 @@ export default function Blog(props: any) {
           {data?.data?.attributes?.title}
         </h2>
         <p data-aos="fade-down" className="flex items-end mt-4">
-          <span className={styles.name}>{data?.data?.attributes?.fullName}</span>{" "}
+          <span className={styles.name}>
+            {data?.data?.attributes?.fullName}
+          </span>{" "}
           <Dot className="" />
           <span className={"hidden md:block " + styles.time}>
-          {data?.data?.attributes?.length} mins read
+            {data?.data?.attributes?.length} mins read
           </span>
           <Dot className="hidden md:block" />
-          <span className={styles.time}>{formatDate(data?.data?.attributes?.publishedAt)}</span>
+          <span className={styles.time}>
+            {formatDate(data?.data?.attributes?.publishedAt)}
+          </span>
         </p>
         <Image
-        loader={imageLoader}
+          loader={imageLoader}
           className="mb-5 mt-[40px]  md:mt-[80px] mb-[32px] md:mb-[40px]"
-          alt={data?.data?.attributes?.title + ' article banner'}
+          alt={data?.data?.attributes?.title + " article banner"}
           src={data?.data?.attributes?.image?.data?.attributes?.url}
           width={416}
           height={317}
         />
-{data?.data?.attributes?.text.map((text: any, index: any)=>{
-  return(
-<p className={styles.p} key={index}>
-          {text.children[0].text}
-        </p>
-  )
-})}
+        {data?.data?.attributes?.text.map((obj: any, index: any) => {
+          if (obj.type === "heading") {
+            return (
+              <h3 className="heading" key={index}>
+                {obj.children[0].text}
+              </h3>
+            );
+          } else if (obj.type === "image") {
+            return (
+              <Image
+                alt={obj?.image?.alternativeText}
+                src={obj?.image?.url}
+                height={obj?.image?.height}
+                width={obj?.image?.width}
+                key={index}
+                style={{ width: "100%", height: "auto" }}
+              />
+            );
+          } else {
+            return (
+              <p className={styles.p} key={index}>
+                {obj.children[0].text}
+              </p>
+            );
+          }
+        })}
       </div>
     </div>
   );

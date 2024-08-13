@@ -24,6 +24,13 @@
   letter-spacing: -0.32px;
 }
 
+.blog_article .heading {
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: -0.96px;
+  color: #32041d;
+}
+
 .p {
   color: rgba(16, 6, 11, 0.7);
   margin-bottom: 16px;
