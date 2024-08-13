@@ -29,6 +29,7 @@
   line-height: 120%;
   letter-spacing: -0.96px;
   color: #32041d;
+  margin: 20px 0;
 }
 
 .p {
@@ -71,5 +72,10 @@
 
   .p {
     font-size: 20px;
+  }
+
+  .blog_article .heading {
+    font-size: 28px;
+    margin: 40px 0;
   }
 }
