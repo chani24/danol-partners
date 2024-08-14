@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import React from "react";
 import styles from "./blog.module.css";
 import Link from "next/link";
 import useSWR from "swr";
@@ -66,7 +66,14 @@ export default function Blog(props: any) {
         {data?.data?.attributes?.text.map((obj: any, index: any) => {
           if (obj.type === "heading") {
             return (
-              <h3 className={styles.heading} key={index}>
+              <h3
+                className={styles.heading}
+                key={index}
+                style={{
+                  fontStyle: obj.children[0].italic ? "italic" : "normal",
+                  fontWeight: obj.children[0].bold ? "700" : "",
+                }}
+              >
                 {obj.children[0].text}
               </h3>
             );
@@ -83,7 +90,14 @@ export default function Blog(props: any) {
             );
           } else {
             return (
-              <p className={styles.p} key={index}>
+              <p
+                style={{
+                  fontStyle: obj.children[0].italic ? "italic" : "normal",
+                  fontWeight: obj.children[0].bold ? "700" : "",
+                }}
+                className={styles.p}
+                key={index}
+              >
                 {obj.children[0].text}
               </p>
             );
