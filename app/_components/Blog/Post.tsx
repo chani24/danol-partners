@@ -71,6 +71,7 @@ export default function Blog(props: any) {
                 key={index}
                 style={{
                   fontStyle: obj.children[0].italic ? "italic" : "normal",
+                  textDecoration: obj.children[0].underline ? "underline" : "",
                   fontWeight: obj.children[0].bold ? "600" : "",
                 }}
               >
@@ -93,6 +94,7 @@ export default function Blog(props: any) {
               <p
                 style={{
                   fontStyle: obj.children[0].italic ? "italic" : "normal",
+                  textDecoration: obj.children[0].underline ? "underline" : "",
                   fontWeight: obj.children[0].bold ? "600" : "",
                 }}
                 className={styles.p}
