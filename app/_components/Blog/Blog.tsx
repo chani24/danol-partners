@@ -8,8 +8,8 @@ import useSWR from "swr";
 import { useState } from "react";
 
 export default function BlogComponent(props: any) {
-  const [page, setPage] = useState(1);
-  const pageSize = props.articleNumber || 9;
+  const page = 1;
+  const [pageSize, setPageSize] = useState(9);
 
   const { data, error } = useSWR(
     `/api/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort[0]=createdAt:desc`,
@@ -79,7 +79,7 @@ export default function BlogComponent(props: any) {
       {hasMore && (
         <div className="flex justify-center mt-8">
           <button
-            onClick={() => setPage(page + 1)}
+            onClick={() => setPageSize(pageSize + 6)}
             className="button button-primary"
           >
             Load More
