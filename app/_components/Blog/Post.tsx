@@ -67,12 +67,13 @@ export default function Blog(props: any) {
           if (obj.type === "heading") {
             return (
               <h3
-                className={styles.heading}
+                className={styles.heading + " mt-4"}
                 key={index}
                 style={{
                   fontStyle: obj.children[0].italic ? "italic" : "normal",
                   textDecoration: obj.children[0].underline ? "underline" : "",
                   fontWeight: obj.children[0].bold ? "600" : "",
+
                 }}
               >
                 {obj.children[0].text}
