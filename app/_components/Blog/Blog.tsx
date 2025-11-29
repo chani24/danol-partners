@@ -76,7 +76,7 @@ export default function BlogComponent(props: any) {
         )}
       </div>
 
-      {!hasMore && (
+      {hasMore && (
         <div className="flex justify-center mt-8">
           <button
             onClick={() => setPage(page + 1)}
