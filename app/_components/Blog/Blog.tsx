@@ -5,16 +5,28 @@ import styles from "./blog.module.css";
 import Link from "next/link";
 import { fetcher, imageLoader } from "@/app/_lib/strapi-rest";
 import useSWR from "swr";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function BlogComponent(props: any) {
-  const page = 1;
-  const [pageSize, setPageSize] = useState(9);
+  const [page, setPage] = useState(1);
+  const pageSize = 9;
+  const [articles, setArticles] = useState<any[]>([]);
 
   const { data, error } = useSWR(
     `/api/blogs?populate=*&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort[0]=createdAt:desc`,
     fetcher
   );
+
+  useEffect(() => {
+    if (data?.data) {
+      setArticles((prev) => {
+        if (page === 1) {
+          return data.data;
+        }
+        return [...prev, ...data.data];
+      });
+    }
+  }, [data, page]);
 
   const hasMore =
     data?.meta?.pagination?.page < data?.meta?.pagination?.pageCount;
@@ -22,7 +34,7 @@ export default function BlogComponent(props: any) {
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[32px] md:gap-y-[64px] mt-[40px] md:mt-[70px]">
-        {data?.data?.map(
+        {articles.map(
           (
             article: {
               id: string;
@@ -79,7 +91,7 @@ export default function BlogComponent(props: any) {
       {hasMore && (
         <div className="flex justify-center mt-8">
           <button
-            onClick={() => setPageSize(pageSize + 6)}
+            onClick={() => setPage(page + 1)}
             className="button button-primary"
           >
             Load More
